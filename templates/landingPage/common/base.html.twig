@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+        <title>{% block title %}Centrum odnowy biologicznej w Cycowie{% endblock %} :: {{ mainTitle }}</title>
+
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/meanmenu.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/boxicons.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/flaticon.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/odometer.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/slick.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/nice-select.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/owl.theme.default.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/magnific-popup.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/fancybox.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
+        {% block stylesheets %}{% endblock %}
+    </head>
+
+    <body>
+        <!-- Preloader (off)
+        <div class="preloader-area">
+            <div class="spinner">
+                <div class="inner">
+                    <div class="disc"></div>
+                    <div class="disc"></div>
+                    <div class="disc"></div>
+                </div>
+            </div>
+        </div>
+        -->
+
+        <!-- Menu content -->
+        {% include 'landingPage/common/widgets/menu.html.twig' %}
+
+        {% block body %}{% endblock %}
+
+
+        <footer class="footer-area pt-50 pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 text-center">
+                        <div class="single-footer-widget">
+                            <div class="widget-logo">
+                                <a href="{{ path('homePage') }}"><img alt="image" src="{{ asset('assets/images/logo.svg') }}" width="274"></a>
+                            </div>
+                            <div class="widget-share">
+                                <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+                                <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="single-footer-widget">
+                            <h3>Zostańmy w kontakcie!</h3>
+                            <ul class="footer-contact-info">
+                                <li>
+                                    <i class='flaticon-placeholder'></i><span>Adres:</span>
+                                    Wólka Cycowska 96F, 21-070 Cyców
+                                </li>
+                                <li>
+                                    <i class='flaticon-phone-call'></i> <span>Telefon:</span>
+                                    <a href="tel:533090016">+533 090 016</a>
+                                </li>
+                                <li>
+                                    <i class='flaticon-mail'></i> <span> Adres Email:</span>
+                                    <a href="mailto:rezerwacje@centrumodnowybiologicznej.pl">rezerwacje@centrumodnowybiologicznej.pl</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="copyright-area-content">
+                    <p>© Copyright 2021 - Centrum Odnowy Biologicznej | Powered by <a href="https://nwxstudio.pl/" target="_blank">NWXStudio</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="go-top">
+            <i class='flaticon-up-arrow'></i>
+        </div>
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.meanmenu.js') }}"></script>
+        <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.appear.js') }}"></script>
+        <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
+        <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+        <script src="{{ asset('assets/js/nice-select.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('assets/js/fancybox.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
+        <script src="{{ asset('assets/js/form-validator.min.js') }}"></script>
+        <script src="{{ asset('assets/js/contact-form-script.js') }}"></script>
+        <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+    </body>
+</html>

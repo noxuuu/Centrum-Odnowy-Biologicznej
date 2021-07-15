@@ -1,0 +1,47 @@
+
+<div class="navbar-area">
+    <div class="main-responsive-nav">
+        <div class="container">
+            <div class="main-responsive-menu">
+                <div class="logo">
+                    <a href=""><img alt="logo" src="{{ asset('assets/images/logo.svg') }}" width="130px"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-navbar">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link {% if app.request.get('_route') == 'homePage' %}active{% endif %}" href="{{ path('homePage') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if app.request.get('_route') == 'homePage' %}active{% endif %}" href="#">O Nas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if app.request.get('_route') == 'homePage' %}active{% endif %}" href="#">Oferta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if app.request.get('_route') == 'homePage' %}active{% endif %}" href="#">Cennik</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if app.request.get('_route') == 'homePage' %}active{% endif %}" href="#">Promocje</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if app.request.get('_route') == 'contactPage' %}active{% endif %}" href="{{ path('contactPage') }}">Kontakt</a>
+                        </li>
+                    </ul>
+                    <div class="others-options d-flex align-items-center">
+                        <div class="option-item">
+                            <div class="navbar-btn">
+                                <a class="default-btn" href="#">Zapisz się online</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

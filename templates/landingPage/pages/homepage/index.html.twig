@@ -1,0 +1,228 @@
+{% extends 'landingPage/common/base.html.twig' %}
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block body %}
+    {% include 'landingPage/common/widgets/slider.html.twig' %}
+    <div class="services-area ptb-100">
+        <div class="container">
+            <div class="section-title">
+                <h2><span>Nasza oferta</span></h2>
+                <p>Poznaj oferowane przez nas usługi</p>
+            </div>
+            <div class="tab services-list-tab">
+                <ul class="tabs">
+                    <li>
+                        <a href="#"><i class="flaticon-bipolar"></i> <span>Kosmetologia</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="flaticon-bipolar"></i> <span>Fizjoterapia</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="flaticon-bipolar"></i> <span>Vacu Fitness</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="flaticon-bipolar"></i> <span>Sauna/Jacuzzi</span></a>
+                    </li>
+                </ul>
+                <div class="tab_content">
+                    <div class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="services-tab-image">
+                                    <img alt="image" src="{{ asset('assets/images/services/vacu.jpg') }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 pb-70">
+                                <div class="services-tab-content">
+                                    <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <div class="services-btn text-center pt-md-5">
+                                        <a class="default-btn" href="#">Sprawdź ofertę <i class="flaticon-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="services-tab-image">
+                                    <img alt="image" src="{{ asset('assets/images/services/vacu.jpg') }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 pb-70">
+                                <div class="services-tab-content">
+                                    <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <div class="services-btn text-center pt-md-5">
+                                        <a class="default-btn" href="#">Sprawdź ofertę <i class="flaticon-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="services-tab-image">
+                                    <img alt="image" src="{{ asset('assets/images/services/vacu.jpg') }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 pb-70">
+                                <div class="services-tab-content">
+                                    <p>Bieżnia Vacu została stworzona z myślą o tych, którzy mają problemy z niechcianą tkanką tłuszczową - szczególnie w dolnych partiach ciała. Ale również tych, które poprzez ćwiczenia chcą nie tylko poprawić swoją kondycję, ale także wytrenować mięśnie, poprawić wygląd skóry oraz ukrwienie organizmu. W urządzeniu typu Vacu, dolna partia ciała - zazwyczaj najbardziej problematyczna - zamykana jest w szczelnej kapsule i poddawana na przemian działaniu podciśnienia i ciśnienia atmosferycznego. Podciśnienie ściąga krew w dolne partie, co przy jednoczesnym wykonywaniu klasycznych ruchów na bieżni powoduje czterokrotnie szybsze spalanie tkanki tłuszczowej oraz szybsze usuwanie toksyn z organizmu.</p>
+                                    <div class="services-btn text-center pt-md-5">
+                                        <a class="default-btn" href="#">Sprawdź ofertę <i class="flaticon-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs_item">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="services-tab-image">
+                                    <img alt="image" src="{{ asset('assets/images/services/vacu.jpg') }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 pb-70">
+                                <div class="services-tab-content">
+                                    <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <div class="services-btn text-center pt-md-5">
+                                        <a class="default-btn" href="#">Sprawdź ofertę <i class="flaticon-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="coaches-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <h2><span>Nasza ekipa</span></h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-coaches">
+                        <div class="image">
+                            <a href="#"><img alt="team-image" src="{{ asset('assets/images/team/natalia.jpg') }}"></a>
+                            <ul class="social-link">
+                                <ul class="social-link">
+                                    <li>
+                                        <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h3><a href="#">Natalia Kopeć</a></h3><span>-- Posada -- </span> <i class='bx bxs-share-alt'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-coaches">
+                        <div class="image">
+                            <a href="#"><img alt="team-image" src="{{ asset('assets/images/team/natalia.jpg') }}"></a>
+                            <ul class="social-link">
+                                <ul class="social-link">
+                                    <li>
+                                        <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h3><a href="#">Natalia Kopeć</a></h3><span>-- Posada -- </span> <i class='bx bxs-share-alt'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-coaches">
+                        <div class="image">
+                            <a href="#"><img alt="team-image" src="{{ asset('assets/images/team/wiktoria.jpg') }}"></a>
+                            <ul class="social-link">
+                                <li>
+                                    <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h3><a href="#">Wiktoria Skoczylas</a></h3><span>-- Posada -- </span> <i class='bx bxs-share-alt'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <h2>Najnowsze Promocje</h2>
+                <p>W tym miejscu wyświetlają się nasze najnowsze promocje, przygotowane specjalnie dla Ciebie!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-pricing-table">
+                        <div class="pricing-header">
+                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
+                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
+                        </ul>
+                        <div class="pricing-btn">
+                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-pricing-table">
+                        <div class="pricing-header">
+                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
+                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
+                        </ul>
+                        <div class="pricing-btn">
+                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-pricing-table">
+                        <div class="pricing-header">
+                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
+                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
+                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
+                        </ul>
+                        <div class="pricing-btn">
+                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/pricing-shape.png') }}"></div>
+    </section>
+{% endblock %}
