@@ -3,5 +3,79 @@
 
 {% block bodyclass %}{% endblock %}
 {% block body %}
+    <section class="contact-info-area pt-100 pb-70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact-info-box">
+                        <div class="icon">
+                            <i class='flaticon-phone-call'></i>
+                            <h3>Telefon</h3>
+                        </div>
+                        <p>Fizjoterapia - <i class="flaticon-phone-call"></i> <a href="tel:791997306">791 997 306</a></p>
+                        <p>Kosmetologia - <i class="flaticon-phone-call"></i> <a href="tel:533090016">533 090 016</a></p>
+                        <p>Vacu Fitness - <i class="flaticon-phone-call"></i> <a href="tel:791997306">791 997 306</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact-info-box">
+                        <div class="icon">
+                            <i class='flaticon-mail'></i>
+                            <h3>Adres Email</h3>
+                        </div>
+                        <p><a href="mailto:kontakt@centrumodnowybiologicznej.pl">kontakt@centrumodnowybiologicznej.pl</a></p>
+                        <p><a href="mailto:rezerwacje@centrumodnowybiologicznej.pl">rezerwacje@centrumodnowybiologicznej.pl</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="contact-info-box">
+                        <div class="icon">
+                            <i class='flaticon-placeholder'></i>
+                            <h3>Nasz Adres</h3>
+                        </div>
+                        <p><i class="flaticon-placeholder"></i> Wólka Cycowska 96F, 21-070 Cyców </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+
+    <section class="contact-area pb-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-image"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h3>Zostańmy w kontakcie!</h3>
+                        <form id="contactForm" name="contactForm">
+                            <div class="form-group">
+                                <input class="form-control" data-error="Wpisz swoje imię" id="name" name="name" placeholder="Imię" required="" type="text">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" data-error="Wpisz swój numer telefonu" id="phone_number" name="phone_number" placeholder="Numer telefonu" required="" type="text">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" data-error="Wpisz swój adres email" id="email" name="email" placeholder="Adres email" required="" type="email">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" cols="30" data-error="Wpisz treść swojej wiadomości" id="message" name="message" placeholder="Treść wiadomości" required="" rows="5"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" id="accept" type="checkbox"> <label class="form-check-label" for="accept">Wyrażam zgodę na przesyłanie informacji handlowych poprzez telekomunikacyjne urządzenia końcowe na powyższy adres e-mail, w tym z wykorzystaniem automatycznych systemów wywołujących i potwierdzam chęć dopisania do bazy. Zgoda jest dobrowolna i może zostać wycofana w dowolnym momencie.</label>
+                            </div><button class="default-btn" type="submit">Wyślij wiadomość</button>
+                            <div class="h3 text-center hidden" id="msgSubmit"></div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

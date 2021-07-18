@@ -3199,8 +3199,8 @@ img {
 .page-banner-area .container-fluid {
     padding-left: 0
 }
-.page-banner-content {
-    margin-left: 70px
+.page-banner-area-breadcrumbs {
+    height: 300px;
 }
 .page-banner-content h2 {
     font-size: 45px;
@@ -7312,7 +7312,8 @@ img {
     padding: 35px 35px 30px;
     margin-bottom: 30px;
     position: relative;
-    border-radius: 50px 50px 0 50px;
+    border-radius: 15px 50px 15px 50px;
+    min-height: 270px;
     overflow: hidden
 }
 .contact-info-box::before {
@@ -7326,7 +7327,7 @@ img {
     z-index: -1;
     -webkit-transition: .6s;
     transition: .6s;
-    border-radius: 50px 50px 0 50px
+    border-radius: 15px 50px 15px 50px;
 }
 .contact-info-box .icon {
     margin-bottom: 22px;
@@ -7334,7 +7335,7 @@ img {
     padding: 30px;
     position: relative;
     text-align: left;
-    border-radius: 20px 20px 0 0
+    border-radius: 15px 50px 15px 50px;
 }
 .contact-info-box .icon i {
     font-size: 35px;

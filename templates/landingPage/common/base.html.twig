@@ -39,6 +39,9 @@
 
         <!-- Menu content -->
         {% include 'landingPage/common/widgets/menu.html.twig' %}
+        {% if app.request.get('_route') != 'homePage' %}
+            {% include 'landingPage/common/widgets/breadcrumbs.html.twig' %}
+        {% endif %}
 
         {% block body %}{% endblock %}
 

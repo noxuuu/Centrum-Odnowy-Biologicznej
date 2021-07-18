@@ -32,6 +32,23 @@ class landingPageController extends AbstractController
     }
 
     /**
+     * @Route("/o-nas/", name="aboutUsPage")
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
+     */
+    public function aboutUsPage()
+    {
+        return $this->render('landingPage/pages/about-us/index.html.twig', [
+            'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
+            'pageTitle' => 'O Nas',
+            'breadcrumbs' => [
+                ['Strona glowna', $this->generateUrl('homePage')],
+                ['O Nas', $this->generateUrl('aboutUsPage')]
+            ]
+        ]);
+    }
+
+    /**
      * @Route("/promocje/", name="promotionsPage")
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Exception
@@ -40,11 +57,7 @@ class landingPageController extends AbstractController
     {
         return $this->render('landingPage/pages/promotions/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
-            'pageTitle' => 'Promocje ~ ',
-            'breadcrumbs' => [
-                ['Strona glowna', 'http://'],
-                ['Promocje', 'http://']
-            ]
+            'pageTitle' => 'Promocje',
         ]);
     }
 
@@ -57,10 +70,10 @@ class landingPageController extends AbstractController
     {
         return $this->render('landingPage/pages/contact/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
-            'pageTitle' => 'Kontakt ~ ',
+            'pageTitle' => 'Kontakt',
             'breadcrumbs' => [
-                ['Strona glowna', 'http://'],
-                ['Kontakt', 'http://']
+                ['Strona glowna', $this->generateUrl('homePage')],
+                ['Kontakt', $this->generateUrl('contactPage')]
             ]
         ]);
     }
