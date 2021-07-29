@@ -49,6 +49,40 @@ class landingPageController extends AbstractController
     }
 
     /**
+     * @Route("/oferta/", name="offerPage")
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
+     */
+    public function offerPage()
+    {
+        return $this->render('landingPage/pages/offer/index.html.twig', [
+            'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
+            'pageTitle' => 'Oferta',
+            'breadcrumbs' => [
+                ['Strona glowna', $this->generateUrl('homePage')],
+                ['Oferta', $this->generateUrl('offerPage')]
+            ]
+        ]);
+    }
+
+    /**
+     * @Route("/cennik/", name="pricesPage")
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
+     */
+    public function pricesPage()
+    {
+        return $this->render('landingPage/pages/prices/index.html.twig', [
+            'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
+            'pageTitle' => 'Cennik',
+            'breadcrumbs' => [
+                ['Strona glowna', $this->generateUrl('homePage')],
+                ['Cennik', $this->generateUrl('pricesPage')]
+            ]
+        ]);
+    }
+
+    /**
      * @Route("/promocje/", name="promotionsPage")
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Exception
@@ -58,6 +92,10 @@ class landingPageController extends AbstractController
         return $this->render('landingPage/pages/promotions/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
             'pageTitle' => 'Promocje',
+            'breadcrumbs' => [
+                ['Strona glowna', $this->generateUrl('homePage')],
+                ['Promocje', $this->generateUrl('promotionsPage')]
+            ]
         ]);
     }
 
