@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03ae3257-3924-476c-8cc0-2d30b05e8161" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/centrumodnowybiologicznej.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/centrumodnowybiologicznej.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/landingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/landingPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/courses-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/landingPage/common/widgets/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/common/widgets/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/about-us/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/about-us/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +132,7 @@
       <workItem from="1624722033773" duration="6017000" />
       <workItem from="1625390237797" duration="1864000" />
       <workItem from="1626283000903" duration="7183000" />
-      <workItem from="1627408398805" duration="3531000" />
+      <workItem from="1627408398805" duration="5297000" />
     </task>
     <servers />
   </component>

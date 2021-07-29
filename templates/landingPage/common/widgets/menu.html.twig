@@ -24,7 +24,7 @@
                             <a class="nav-link {% if app.request.get('_route') == 'homePage' %}active{% endif %}" href="#">Oferta</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if app.request.get('_route') == 'homePage' %}active{% endif %}" href="#">Cennik</a>
+                            <a class="nav-link {% if app.request.get('_route') == 'pricesPage' %}active{% endif %}" href="{{ path('pricesPage') }}">Cennik</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if app.request.get('_route') == 'promotionsPage' %}active{% endif %}" href="{{ path('promotionsPage') }}">Promocje</a>

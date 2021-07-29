@@ -4256,9 +4256,6 @@ img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1)
 }
-.courses-details-desc {
-    margin-top: 50px
-}
 .courses-details-desc .nav {
     margin-bottom: 0;
     list-style-type: none;
@@ -4306,9 +4303,6 @@ img {
 .courses-details-desc .nav .nav-item:last-child {
     margin-right: 0
 }
-.courses-details-desc .tab-content {
-    margin-top: 40px
-}
 .courses-details-desc .tab-content .courses-overview h3 {
     margin-bottom: 20px;
     font-size: 25px
@@ -4317,13 +4311,11 @@ img {
     margin-top: 20px
 }
 .courses-details-desc .tab-content .courses-curriculum {
-    border: 1px solid #eee;
-    border-radius: 5px;
-    padding: 30px
+    padding: 15px
 }
 .courses-details-desc .tab-content .courses-curriculum h3 {
     margin-bottom: 18px;
-    font-size: 20px
+    font-size: 18px
 }
 .courses-details-desc .tab-content .courses-curriculum h3:not(:first-child) {
     margin-top: 20px
@@ -4348,7 +4340,8 @@ img {
 }
 .courses-details-desc .tab-content .courses-curriculum ul li a .courses-name {
     font-size: 15px;
-    font-weight: 500
+    font-weight: 500;
+    padding-left: 30px;
 }
 .courses-details-desc .tab-content .courses-curriculum ul li a .courses-meta {
     text-align: right
