@@ -21,7 +21,7 @@
                             <a class="nav-link {% if app.request.get('_route') == 'aboutUsPage' %}active{% endif %}" href="{{ path('aboutUsPage') }}">O Nas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if app.request.get('_route') == 'homePage' %}active{% endif %}" href="#">Oferta</a>
+                            <a class="nav-link {% if app.request.get('_route') == 'offerPage' %}active{% endif %}" href="{{ path('offerPage') }}">Oferta</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if app.request.get('_route') == 'pricesPage' %}active{% endif %}" href="{{ path('pricesPage') }}">Cennik</a>

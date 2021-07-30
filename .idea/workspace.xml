@@ -24,7 +24,10 @@
       <change beforePath="$PROJECT_DIR$/courses-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/courses-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/faq.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/contact.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/contact.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/landingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/landingPageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/landingPage/common/widgets/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/common/widgets/menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/prices/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/prices/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,12 +114,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\landingPage\pages\offer" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\landingPage\pages" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\landingPage\pages\contact" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\images\services" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\images\offer-widget" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\images\team" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\images" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -132,7 +138,7 @@
       <workItem from="1624722033773" duration="6017000" />
       <workItem from="1625390237797" duration="1864000" />
       <workItem from="1626283000903" duration="7183000" />
-      <workItem from="1627408398805" duration="5297000" />
+      <workItem from="1627408398805" duration="14057000" />
     </task>
     <servers />
   </component>

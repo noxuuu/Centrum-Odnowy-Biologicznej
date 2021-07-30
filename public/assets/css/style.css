@@ -1414,7 +1414,7 @@ img {
     margin-top: 0
 }
 .single-features {
-    background-color: #f0b9b2;
+    background-color: #ffdce0;
     padding: 35px 30px;
     border-radius: 30px 30px 0 30px;
     -webkit-transition: .6s;
@@ -1704,7 +1704,7 @@ img {
     height: 70px;
     width: 70px;
     line-height: 70px;
-    background-color: #f0b9b2;
+    background-color: #ffdce0;
     color: #fff;
     text-align: center;
     font-size: 35px;
@@ -1736,7 +1736,7 @@ img {
     color: #221d48
 }
 .about-main-content .about-btn .default-btn:hover {
-    background-color: #f0b9b2
+    background-color: #ffdce0
 }
 .about-main-content .about-btn .default-btn:hover i {
     background-color: #221d48;
@@ -1782,7 +1782,7 @@ img {
     opacity: 70%
 }
 .partner-area {
-    background-color: #f0b9b2
+    background-color: #ffdce0
 }
 .partner-area.bg-transparent {
     background-color: transparent;
@@ -1792,13 +1792,13 @@ img {
     left: 0
 }
 .partner-area.bg-transparent .single-partner {
-    background-color: #f0b9b2
+    background-color: #ffdce0
 }
 .partner-area.bg-color {
     background-color: #fff
 }
 .partner-area.bg-color .single-partner {
-    background-color: #f0b9b2
+    background-color: #ffdce0
 }
 .single-partner {
     padding: 35px;
@@ -1880,7 +1880,7 @@ img {
     height: 60px;
     width: 60px;
     line-height: 60px;
-    background-color: #f0b9b2;
+    background-color: #ffdce0;
     color: #fff;
     text-align: center;
     font-size: 30px;
@@ -3034,7 +3034,7 @@ img {
     overflow: hidden
 }
 .single-pricing-table {
-    background-color: #f0b9b2;
+    background-color: #ffdce0;
     padding: 30px 30px 15px;
     margin-bottom: 30px;
     border-radius: 15px 50px 15px 50px;
@@ -3972,15 +3972,15 @@ img {
     display: inline-block;
     background-color: #f0b9b2;
     color: #fff;
-    width: 65px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     position: absolute;
     right: 20px;
     bottom: -32.5px;
     text-align: center;
-    line-height: 65px;
-    font-size: 25px;
+    line-height: 80px;
+    font-size: 16px;
     font-weight: 600
 }
 .single-courses-box .courses-content {
@@ -4589,11 +4589,16 @@ img {
     margin-left: 5px
 }
 .courses-details-info {
-    background-color: #f5f5f5;
     border-radius: 5px;
     padding: 12px 12px 50px;
-    margin-top: 50px
 }
+
+.content-section-title {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+
 .courses-details-info .image {
     text-align: center;
     position: relative
@@ -4732,7 +4737,7 @@ img {
 }
 .services-details-desc .content-image {
     position: relative;
-    margin-bottom: 25px
+    margin-bottom: 25px;
 }
 .services-details-desc .content-image .sub-title {
     position: absolute;
@@ -4741,7 +4746,7 @@ img {
     transform: translateY(-50%);
     left: 35px;
     font-size: 30px;
-    font-style: italic
+    font-style: italic;
 }
 .services-details-desc .overview-image {
     margin-top: 25px;
@@ -7301,7 +7306,7 @@ img {
     transition: .6s;
     -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, .08);
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, .08);
-    background: #f0b9b2;
+    background: #ffdce0;
     padding: 35px 35px 30px;
     margin-bottom: 30px;
     position: relative;

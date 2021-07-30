@@ -66,6 +66,24 @@ class landingPageController extends AbstractController
     }
 
     /**
+     * @Route("/oferta/twarz", name="offerDetailsPage")
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
+     */
+    public function offerDetails()
+    {
+        return $this->render('landingPage/pages/offer/services/index.html.twig', [
+            'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
+            'pageTitle' => 'Zabiegi na twarz',
+            'breadcrumbs' => [
+                ['Strona glowna', $this->generateUrl('homePage')],
+                ['Oferta', $this->generateUrl('offerPage')],
+                ['Zabiegi na twarz', $this->generateUrl('offerDetailsPage')]
+            ]
+        ]);
+    }
+
+    /**
      * @Route("/cennik/", name="pricesPage")
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Exception

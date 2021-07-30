@@ -1,0 +1,29 @@
+{% extends 'landingPage/common/base.html.twig' %}
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block bodyclass %}{% endblock %}
+{% block body %}
+
+<section class="pricing-area pt-50 pb-70">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="single-courses-box">
+                    <div class="courses-image">
+                        <a href="{{ path('offerDetailsPage') }}">
+                            <img src="/assets/images/courses/courses-2.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="courses-content">
+                        <div class="course-author text-center">
+                            <span>Zabiegi na twarz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/pricing-shape.png') }}"></div>
+</section>
+{% endblock %}
