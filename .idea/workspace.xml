@@ -38,18 +38,15 @@
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/centrumodnowybiologicznej.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/centrumodnowybiologicznej.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/landingPageController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers/hello_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/common/widgets/topbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/widgets/topbar.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +200,7 @@
       <workItem from="1628104129555" duration="1527000" />
       <workItem from="1628186337431" duration="1200000" />
       <workItem from="1628437264807" duration="4321000" />
-      <workItem from="1628444521605" duration="6744000" />
+      <workItem from="1628444521605" duration="8848000" />
     </task>
     <servers />
   </component>
@@ -240,22 +237,22 @@
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628448212740" />
     <state x="2610" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1626284058919" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1628445048483">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1628537572449">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628445048483" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1628445048483">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628537572449" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1628537572449">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628445048483" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1628445048483">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628537572449" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1628537572449">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628445048483" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1628445048483">
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628537572449" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1628537572449">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628445048483" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628537572449" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1628449468990">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
