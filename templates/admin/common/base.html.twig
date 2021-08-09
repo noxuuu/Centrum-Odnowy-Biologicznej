@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}:: {{ mainTitle }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('dore') }}
+    {{ encore_entry_link_tags('mousetrap') }}
+    {{ encore_entry_link_tags('nouislider') }}
+    {{ encore_entry_link_tags('sweetalert') }}
+    {% block stylesheets %}{% endblock %}
+</head>
+<body id="app-container" class="menu-default show-spinner">
+<div id="ajax_loader" class="ajax_loading" style="display: none;"></div>
+{% include('admin/common/widgets/topbar.html.twig') %}
+{% include('admin/common/widgets/navigation.html.twig') %}
+<main>
+    <div class="container-fluid">
+        {% include('admin/common/widgets/pageTitle.html.twig') %}
+        {% block body %}{% endblock %}
+
+
+            <div class="modal modal-right" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="modal_add" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        {% block modal_add %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+    </div>
+</main>
+
+{{ encore_entry_script_tags('app') }}
+{{ encore_entry_script_tags('mousetrap') }}
+{{ encore_entry_script_tags('nouislider') }}
+{{ encore_entry_script_tags('dore') }}
+{{ encore_entry_script_tags('scripts') }}
+{{ encore_entry_script_tags('sweetalert') }}
+{{ encore_entry_script_tags('ajax') }}
+
+<!--Success notifications -->
+{% for message in app.flashes('add_success') %}
+    <script>
+        $(window).on('load', function () {
+            window.setTimeout(function () {
+                swal("Sukces", "{{ message }}", "success");
+            }, 700);
+        });
+    </script>
+{% endfor %}
+
+{% for message in app.flashes('edit_success') %}
+    <script>
+        $(window).on('load', function () {
+            window.setTimeout(function () {
+                swal("Sukces", "{{ message }}", "success");
+            }, 700);
+        });
+    </script>
+{% endfor %}
+
+<!-- Error notifications -->
+{% for message in app.flashes('add_error') %}
+    <script>
+        $(window).on('load', function () {
+            window.setTimeout(function () {
+                swal("Błąd", "{{ message }}.", "error");
+            }, 700);
+        });
+    </script>
+{% endfor %}
+
+{% for message in app.flashes('edit_error') %}
+    <script>
+        $(window).load(function () {
+            window.setTimeout(function () {
+                swal("Błąd", "{{ message }}.", "error");
+            }, 700);
+        });
+    </script>
+{% endfor %}
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

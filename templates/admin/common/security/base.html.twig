@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} :: {{ mainTitle }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('dore') }}
+    {{ encore_entry_link_tags('mousetrap') }}
+    {{ encore_entry_link_tags('nouislider') }}
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<body {% block bodyclass %}{% endblock %}>
+{% block body %}{% endblock %}
+
+{{ encore_entry_script_tags('app') }}
+{{ encore_entry_script_tags('dore') }}
+{{ encore_entry_script_tags('scripts') }}
+
+{% block javascripts %}{% endblock %}
+</body>

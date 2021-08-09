@@ -1,0 +1,15 @@
+<div class="sidebar">
+    <div class="main-menu">
+        <div class="scroll">
+            <ul class="list-unstyled">
+                <li {% if app.request.get('_route') == 'adminDashboard' %}class="active"{% endif %}>
+                    <a href="{{ path('adminDashboard') }}">
+                        <i class="iconsmind-Optimization"></i>
+                        <span>Panel kontrolny</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

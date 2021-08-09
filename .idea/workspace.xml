@@ -20,10 +20,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03ae3257-3924-476c-8cc0-2d30b05e8161" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/.idea/PhotoPortfolio-KatarzynaKropornicka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/.idea/PhotoPortfolio-KatarzynaKropornicka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/public/assets/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/public/assets/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/src/Controller/admin/settings/settingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/src/Controller/admin/settings/settingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/src/Controller/landingPage/landingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/src/Controller/landingPage/landingPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/src/Repository/ppPhotosRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/src/Repository/ppPhotosRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/admin/common/widgets/topbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/admin/common/widgets/topbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/centrumodnowybiologicznej.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/centrumodnowybiologicznej.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/about-us/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/about-us/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/contact/contact.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/landingPageController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,10 +112,40 @@
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/symfony/proxy-manager-bridge" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1uIu18cZ92hHeB3SvkJRCSFWsa9" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -97,9 +153,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -107,22 +164,28 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="ssh.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\offer" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\landingPage\pages" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\landingPage\pages\contact" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\images\services" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\js" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\offer" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\landingPage\pages\offer" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\n.o.x\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="03ae3257-3924-476c-8cc0-2d30b05e8161" name="Default Changelist" comment="" />
@@ -136,7 +199,11 @@
       <workItem from="1625390237797" duration="1864000" />
       <workItem from="1626283000903" duration="7183000" />
       <workItem from="1627408398805" duration="14654000" />
-      <workItem from="1627832837035" duration="2941000" />
+      <workItem from="1627832837035" duration="7402000" />
+      <workItem from="1628104129555" duration="1527000" />
+      <workItem from="1628186337431" duration="1200000" />
+      <workItem from="1628437264807" duration="4321000" />
+      <workItem from="1628444521605" duration="6744000" />
     </task>
     <servers />
   </component>
@@ -156,10 +223,50 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1627833998098">
+    <state x="552" y="183" key="#Deployment" timestamp="1628020433798">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1627833998098" />
+    <state x="552" y="183" key="#Deployment/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628020433798" />
+    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1628440882830">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628440882830" />
+    <state x="122" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1628535548941">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="122" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628535548941" />
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628448212740">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628448212740" />
     <state x="2610" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1626284058919" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1628445048483">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628445048483" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1628445048483">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628445048483" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1628445048483">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628445048483" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1628445048483">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628445048483" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1628449468990">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628449468990" />
+    <state x="670" y="248" key="NewPhpClassDialog" timestamp="1628438020770">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="670" y="248" key="NewPhpClassDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628438020770" />
+    <state x="461" y="170" key="SettingsEditor" timestamp="1628020626313">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628020626313" />
   </component>
 </project>
