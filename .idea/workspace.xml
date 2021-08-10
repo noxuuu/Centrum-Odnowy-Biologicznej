@@ -39,10 +39,11 @@
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/dore.light.blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/dore.light.blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/img/login-background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/img/login-background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/img/login-image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/common/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/img/logo-black.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/img/logo-black.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/security/loginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/security/loginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/common/widgets/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/widgets/navigation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/common/widgets/topbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/widgets/topbar.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +150,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/css/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -162,11 +163,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller\admin" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller\admin\categories" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\css\img" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets" />
@@ -196,7 +197,7 @@
       <workItem from="1628104129555" duration="1527000" />
       <workItem from="1628186337431" duration="1200000" />
       <workItem from="1628437264807" duration="4321000" />
-      <workItem from="1628444521605" duration="12010000" />
+      <workItem from="1628444521605" duration="14114000" />
     </task>
     <servers />
   </component>
@@ -224,10 +225,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628440882830" />
-    <state x="122" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1628535548941">
+    <state x="122" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1628624758656">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="122" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628535548941" />
+    <state x="122" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628624758656" />
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628618730938">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

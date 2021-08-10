@@ -8,8 +8,50 @@
                         <span>Panel kontrolny</span>
                     </a>
                 </li>
+                <li {% if app.request.get('_route') == 'adminCategories' %}class="active"{% endif %}>
+                    <a href="{{ path('adminCategories') }}">
+                        <i class="iconsmind-Bulleted-List"></i>
+                        <span>Kategorie</span>
+                    </a>
+                </li>
+                <li {% if app.request.get('_route') == 'adminOffers' %}class="active"{% endif %}>
+                    <a href="{{ path('adminOffers' )}}">
+                        <i class="iconsmind-Star"></i>
+                        <span>Oferta</span>
+                    </a>
+                </li>
+                <li {% if app.request.get('_route') == 'adminPromotionsAll'
+                        or app.request.get('_route') == 'adminPromotionsFeatured' %}class="active"{% endif %}>
+                    <a href="#promotions">
+                        <i class="iconsmind-Coins"></i>
+                        <span>Promocje</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="sub-menu">
+        <div class="scroll" style="top: 10px;">
+            <ul class="list-unstyled" data-link="promotions">
+                <li>
+                    <a href="{{ path('adminPromotionsAll') }}">
+                        <i class="simple-icon-calculator"></i> Wszystkie promocje
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('adminPromotionsFeatured') }}">
+                        <i class="simple-icon-calculator"></i> Wyróżnione promocje
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
 </div>
 
+Kategorie
+Uslugi
+Promocje
+ - wszystkie promocje
+ - wyroznione promocje
