@@ -1996,6 +1996,10 @@ main {
   background: initial;
   padding-top: 0; }
 
+.no-results-icon {
+  padding-left: 25px;
+  font-size: 20px;
+}
 /* 18.Dashboard*/
 
   .dashboard-small-chart .chart {
