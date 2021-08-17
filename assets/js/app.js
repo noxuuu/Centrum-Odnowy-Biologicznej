@@ -21,12 +21,3 @@ require('moment');
 global.$ = global.jQuery = $;
 window.$ = $;
 window.jQuery = $;
-
-// ajax scripts
-let app = require("./ajax");
-
-// handle notification click
-$(".notification-active").click(function (evt) {
-    // pass id to read notification function
-    app.readNotification(parseInt($(this).data('notification-id')))
-});

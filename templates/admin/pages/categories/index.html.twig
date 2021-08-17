@@ -1,14 +1,43 @@
 {% extends 'admin/common/base.html.twig' %}
 {% block title %}{{ pageTitle }}{% endblock %}
 {% block stylesheets %}
-
+    {{ encore_entry_link_tags('dropzone') }}
 {% endblock %}
 
 {% block body %}
     <div class="row">
         <div class="col-12 list">
             {% if categories|length > 0 %}
-
+                {% for category in categories %}
+                    {% if category.getParent() is null or selectedCategory is not null%}
+                        <div class="card d-flex flex-row mb-3" id="category-{{ category.getId()|replace({' ': "-"}) }}">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <a class="d-flex" href="{{ path('adminCategories', {'category': category.getId()}) }}">
+                                    <img alt="{{ category.getName() }}" class="list-thumbnail responsive border-0 card-img-left" src="{{ asset('assets/images/offer/'~ category.getImage()) }}">
+                                </a>
+                                <div class="pl-2 d-flex flex-grow-1 min-width-zero">
+                                    <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                        <a class="list-item-heading mb-1 truncate w-15 w-xs-100" href="{{ path('adminCategories', {'category': category.getId()}) }}">
+                                            {{ category.getName() }}
+                                        </a>
+                                        <div class="w-15 w-xs-100 ">
+                                            <a href="{% if category.getSubCategories()|length > 0 %}{{ path('adminCategories', {'category': category.getId()}) }}{% else %}#{% endif %}">
+                                                <span class="badge badge-pill badge-outline-primary">Podkategorie - {{ category.getSubCategories()|length }}</span>
+                                            </a>
+                                        </div>
+                                        <div class="w-15 w-xs-100 ">
+                                            <span class="badge badge-pill badge-outline-primary">Kolejność - {{ category.getOrderNumber() }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pl-1 align-self-center pr-4">
+                                    <button type="button" data-toggle="modal" data-target="#edit-{{ category.getId() }}" class="btn btn-primary btn-sm mr-1">Edytuj</button>
+                                    <button type="button" onclick="confirmDelete({{ category.getId() }})" class="btn btn-primary btn-sm mr-1">Usuń</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             {% else %}
                 <div class="card d-flex flex-row media-thumb-container">
                     <a class="d-flex align-self-center media-thumbnail-icon no-results-icon">
@@ -27,7 +56,38 @@
     </div>
 {% endblock %}
 
+
 {% block modal_add %}
+    <div class="modal-header">
+        <h5 class="modal-title">Dodaj nową kategorie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    {{ form_start(form_add) }}
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Nazwa:</label>
+            {{ form_widget(form_add.name) }}
+        </div>
+        <div class="form-group">
+            <label>Obrazek kategorii: </label>
+            {{ form_widget(form_add.image) }}
+        </div>
+        <div class="form-group">
+            <label>Kolejność wyświetlania: </label>
+            {{ form_widget(form_add.orderNumber, {'value' : categories|length + 1}) }}
+        </div>
+        <div class="form-group">
+            <label>Kategoria nadrzędna: </label>
+            {{ form_widget(form_add.parent) }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Anuluj</button>
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+    </div>
+    {{ form_end(form_add) }}
 {% endblock %}
 
 {% block javascripts %}
@@ -47,7 +107,7 @@
                 },
                 function(){
                     $.ajax({
-                        url:        '/admin/blog/categories/' + id + '/delete/',
+                        url:        '/adminpanel/categories/' + id + '/delete/',
                         type:       'GET',
                         dataType:   'json',
                         async:      true,

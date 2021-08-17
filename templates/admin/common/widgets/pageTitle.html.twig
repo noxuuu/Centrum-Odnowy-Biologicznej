@@ -3,6 +3,11 @@
         <div class="mb-3">
             <h1>{{ pageTitle }}</h1>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% if app.request.get('_route') == 'adminCategories' %}
+                    <div class="float-sm-right text-zero">
+                        <button type="button" class="btn btn-primary btn-lg mr-1" data-toggle="modal" data-backdrop="static" data-target="#modal_add">Dodaj nową kategorie</button>
+                    </div>
+                {% endif %}
             {% endif %}
             <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
                 <ol class="breadcrumb pt-0">
