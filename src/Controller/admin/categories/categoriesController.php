@@ -6,6 +6,7 @@ namespace App\Controller\admin\categories;
 
 use App\Entity\Category;
 use App\Form\CategoryType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -82,9 +83,40 @@ class categoriesController extends AbstractController
             'breadcrumbs' => $breadcrumbs,
             'categories' => $categories,
             'form_add' => $form_add->createView(),
+            'form_edit' => $form_edit,
             'selectedCategory' => $selectedCategory
         ]);
     }
+
+
+    /**
+     * @Route("/adminpanel/categories/{id}/edit", name="adminCategoryEdit")
+     * @Entity("id", expr="repository.find(id)")
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
+     */
+    public function editCategory(Request $request, Category $category)
+    {
+        $categoryName = $category->getName();
+
+        $editForm = $this->createForm(CategoryType::class, $category);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            try {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->flush();
+
+                $this->addFlash('edit_success', 'Edytowano '.$categoryName.'!');
+
+            } catch (\Exception $e) {
+                $this->addFlash('edit_error', 'Wystąpił niespodziewany błąd.');
+            }
+        }
+
+        return $this->redirectToRoute('adminCategories');
+    }
+
     /**
      * @Route("/adminpanel/categories/{id}/delete", name="adminCategoryDelete")
      * @param Request $request

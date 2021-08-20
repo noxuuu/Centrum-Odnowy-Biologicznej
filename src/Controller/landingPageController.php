@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -61,7 +62,8 @@ class landingPageController extends AbstractController
             'breadcrumbs' => [
                 ['Strona glowna', $this->generateUrl('homePage')],
                 ['Oferta', $this->generateUrl('offerPage')]
-            ]
+            ],
+            'categories' => $this->getDoctrine()->getRepository(Category::class)->findAll()
         ]);
     }
 

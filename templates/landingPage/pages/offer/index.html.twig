@@ -7,21 +7,26 @@
 <section class="pricing-area pt-50 pb-70">
     <div class="container">
         <div class="row">
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-courses-box">
-                    <div class="courses-image">
-                        <a href="{{ path('offerDetailsPage') }}">
-                            <img src="/assets/images/courses/courses-2.jpg" alt="image">
-                        </a>
-                    </div>
-                    <div class="courses-content">
-                        <div class="course-author text-center">
-                            <span>Zabiegi na twarz</span>
+            {% if categories|length > 0 %}
+                {% for category in categories %}
+                    {% if category.getParent() is null or selectedCategory is not null%}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-courses-box">
+                                <div class="courses-image">
+                                    <a href="{{ path('offerDetailsPage') }}">
+                                        <img src="{{ asset('assets/images/offer/'~ category.getImage()) }}" alt="{{ category.getName() }}">
+                                    </a>
+                                </div>
+                                <div class="courses-content">
+                                    <div class="course-author text-center">
+                                        <span>{{ category.getName() }}</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
     <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/offer/shape.png') }}"></div>
