@@ -39,12 +39,10 @@
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7baa44b-c7b7-4e5c-be35-e5e0834536de.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7baa44b-c7b7-4e5c-be35-e5e0834536de.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/admin/categories/categoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/categories/categoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/landingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/landingPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/pages/categories/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/categories/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/about-us/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/about-us/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/offer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/offer/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +203,7 @@
       <workItem from="1628437264807" duration="4321000" />
       <workItem from="1628444521605" duration="15186000" />
       <workItem from="1628708072365" duration="20400000" />
-      <workItem from="1629484906679" duration="2287000" />
+      <workItem from="1629484906679" duration="7927000" />
     </task>
     <servers />
   </component>
@@ -274,5 +272,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628020626313" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1629500693229">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1629500693229" />
   </component>
 </project>

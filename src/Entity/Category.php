@@ -44,9 +44,15 @@ class Category
      */
     private $subcategories;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Offer::class, mappedBy="category")
+     */
+    private $offers;
+
     public function __construct()
     {
         $this->subcategories = new ArrayCollection();
+        $this->offers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -126,6 +132,36 @@ class Category
             // set the owning side to null (unless already changed)
             if ($parentCategory->getParent() === $this) {
                 $parentCategory->setParent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Offer[]
+     */
+    public function getOffers(): Collection
+    {
+        return $this->offers;
+    }
+
+    public function addOffer(Offer $offer): self
+    {
+        if (!$this->offers->contains($offer)) {
+            $this->offers[] = $offer;
+            $offer->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOffer(Offer $offer): self
+    {
+        if ($this->offers->removeElement($offer)) {
+            // set the owning side to null (unless already changed)
+            if ($offer->getCategory() === $this) {
+                $offer->setCategory(null);
             }
         }
 

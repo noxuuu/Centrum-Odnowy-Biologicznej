@@ -6,7 +6,7 @@
 
 <section class="pricing-area pt-50 pb-70">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             {% if categories|length > 0 %}
                 {% for category in categories %}
                     {% if category.getParent() is null or selectedCategory is not null%}
@@ -14,7 +14,8 @@
                             <div class="single-courses-box">
                                 <div class="courses-image">
                                     <a href="{{ path('offerDetailsPage') }}">
-                                        <img src="{{ asset('assets/images/offer/'~ category.getImage()) }}" alt="{{ category.getName() }}">
+                                        {# <img src="{{ asset('assets/images/offer/'~ category.getImage()) }}" alt="{{ category.getName() }}"> #}
+                                        <img src="{{ asset('assets/images/offer/offer-bg.jpg') }}" alt="{{ category.getName() }}">
                                     </a>
                                 </div>
                                 <div class="courses-content">
