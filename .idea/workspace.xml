@@ -39,11 +39,14 @@
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7baa44b-c7b7-4e5c-be35-e5e0834536de.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7baa44b-c7b7-4e5c-be35-e5e0834536de.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/pages/categories/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/categories/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/offer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/offer/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/team/natalia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/team/wiktoria.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/admin/offers/offersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/offers/offersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/common/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/common/widgets/pageTitle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/widgets/pageTitle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/about-us/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/about-us/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +157,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/pages/categories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/pages/offer" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -166,18 +169,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\offer" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\team" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\categories" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller\admin" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller\admin\categories" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\js" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\offer" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\landingPage\pages\offer" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\categories" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller\admin" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller\admin\categories" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\css\img" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -204,6 +207,7 @@
       <workItem from="1628444521605" duration="15186000" />
       <workItem from="1628708072365" duration="20400000" />
       <workItem from="1629484906679" duration="7927000" />
+      <workItem from="1629555330767" duration="13089000" />
     </task>
     <servers />
   </component>
@@ -240,10 +244,10 @@
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628618730938" />
     <state x="2610" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1626284058919" />
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1629489746006">
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1629751148363">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1629489746006" />
+    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1629751148363" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1628537572449">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -1,0 +1,123 @@
+{% extends 'admin/common/base.html.twig' %}
+{% block title %}{{ pageTitle }}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('dropzone') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-12 list">
+            {% if offers|length > 0 %}
+                {% for offer in offers %}
+                    <div class="card d-flex flex-row mb-3" id="category-{{ offer.getId()|replace({' ': "-"}) }}">
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div class="pl-2 d-flex flex-grow-1 min-width-zero">
+                                <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                    <a class="list-item-heading mb-1 truncate w-15 w-xs-100">
+                                        {{ offer.getName() }}
+                                    </a>
+                                    <div class="w-15 w-xs-50 ">
+                                        <span class="badge badge-pill badge-outline-primary">{{ offer.getCategory().getName() }}</span>
+                                    </div>
+                                    <div class="w-15 w-xs-50 ">
+                                        <span class="badge badge-pill badge-outline-primary">{{ offer.getOfferCombinations()|length }} Kombinacje</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pl-1 align-self-center pr-4">
+                                <button type="button" data-toggle="modal" data-target="#edit-{{ offer.getId() }}" class="btn btn-primary btn-sm mr-1">Edytuj</button>
+                                <button type="button" onclick="confirmDelete({{ offer.getId() }})" class="btn btn-primary btn-sm mr-1">Usuń</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="card d-flex flex-row media-thumb-container">
+                    <a class="d-flex align-self-center media-thumbnail-icon no-results-icon">
+                        <i class="iconsmind-Information"></i>
+                    </a>
+                    <div class="d-flex flex-grow-1 min-width-zero">
+                        <div class="card-body align-self-center d-flex flex-column justify-content-between min-width-zero align-items-lg-center">
+                            <a class="w-100">
+                                <p class="list-item-heading mb-1 truncate">Nie znaleziono żadnej oferty, utwórz pierwszą używając przycisku powyżej.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block modal_add %}
+    <div class="modal-header">
+        <h5 class="modal-title">Dodaj nową ofertę</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    {{ form_start(form_add) }}
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Nazwa:</label>
+            {{ form_widget(form_add.name) }}
+        </div>
+        <div class="form-group">
+            <label>Opis: </label>
+            {{ form_widget(form_add.describtion) }}
+        </div>
+        <div class="form-group">
+            <label>Aftercare: </label>
+            {{ form_widget(form_add.aftercare) }}
+        </div>
+        <div class="form-group">
+            <label>Kategoria oferty: </label>
+            {{ form_widget(form_add.category) }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Anuluj</button>
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+    </div>
+    {{ form_end(form_add) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        function confirmDelete(id) {
+            swal({
+                    title: "Jesteś pewien?",
+                    text: "Jeżeli ta kategoria jest kategorią nadrzędną, subkategorie zostaną przeniesione do głównej kategorii!",
+                    type: "warning",
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    confirmButtonClass: "btn-primary",
+                    cancelButtonClass: "btn-outline-primary",
+                    confirmButtonText: "Tak, usuń!",
+                    cancelButtonText: "Anuluj",
+                    closeOnConfirm: false
+                },
+                function(){
+                    $.ajax({
+                        url:        '/adminpanel/categories/' + id + '/delete/',
+                        type:       'GET',
+                        dataType:   'json',
+                        async:      true,
+
+                        success: function(data, status) {
+                            if(data[0]) {
+                                swal("Usunięto!", "Poprawnie usunięto kategorie.", "success");
+
+                                // tricky thing but works so it's fine :)
+                                $('#category-' + id).addClass('hidden');
+                            }
+                        },
+                        error : function(xhr, textStatus, errorThrown) {
+                            swal("Błąd", " Wystąpił niespodziewany błąd, skontaktuj się z administratorem.", "error");
+                        }
+                    });
+                });
+        }
+    </script>
+{% endblock %}
