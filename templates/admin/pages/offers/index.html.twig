@@ -49,75 +49,12 @@
     </div>
 {% endblock %}
 
-
-{% block modal_add %}
-    <div class="modal-header">
-        <h5 class="modal-title">Dodaj nową ofertę</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    {{ form_start(form_add) }}
-    <div class="modal-body">
-        <div class="form-group">
-            <label>Nazwa:</label>
-            {{ form_widget(form_add.name) }}
-        </div>
-        <div class="form-group">
-            <label>Opis: </label>
-            {{ form_widget(form_add.describtion) }}
-        </div>
-        <div class="form-group">
-            <label>Przeciwwskazania</label>
-
-            <div class="input-group">
-                <input type="text" id="offer_contraindications" name="contraindications[]" required="required" class="form-control">
-                <div class="input-group-btn">
-                    <button class="btn btn-success" type="button" onclick="addContraindicationsFields();"> <i class="iconsmind-Add" aria-hidden="true"></i></button>
-                </div>
-            </div>
-
-            <div id="contraindicationsAdditionalFields"></div>
-        </div>
-        <div class="form-group">
-            <label>Aftercare: </label>
-            {{ form_widget(form_add.aftercare) }}
-        </div>
-        <div class="form-group">
-            <label>Kategoria oferty: </label>
-            {{ form_widget(form_add.category) }}
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Anuluj</button>
-        <button type="submit" class="btn btn-primary">Zapisz</button>
-    </div>
-    {{ form_end(form_add) }}
-{% endblock %}
-
 {% block javascripts %}
     <script>
-        var room = 1;
-
-        function addContraindicationsFields() {
-            room++;
-            var objTo = document.getElementById('contraindicationsAdditionalFields')
-            var divtest = document.createElement("div");
-            divtest.setAttribute("class", "form-group additional"+room);
-            var rdiv = 'additional'+room;
-            divtest.innerHTML = '<div class="input-group"> <input type="text" class="form-control" required="required" name="contraindications[]"><div class="input-group-btn"> <button class="btn btn-danger" type="button" onclick="removeAddedField('+ room +');"> <i class="iconsmind-Remove" aria-hidden="true"></i> </button></div></div>';
-
-            objTo.appendChild(divtest)
-        }
-
-        function removeAddedField(rid) {
-            $('.additional'+rid).remove();
-        }
-
         function confirmDelete(id) {
             swal({
                     title: "Jesteś pewien?",
-                    text: "Jeżeli ta kategoria jest kategorią nadrzędną, subkategorie zostaną przeniesione do głównej kategorii!",
+                    text: "Tej oferty nie będzie można przywrócić!",
                     type: "warning",
                     showCancelButton: true,
                     showLoaderOnConfirm: true,
@@ -129,14 +66,14 @@
                 },
                 function(){
                     $.ajax({
-                        url:        '/adminpanel/categories/' + id + '/delete/',
+                        url:        '/adminpanel/offers/' + id + '/delete/',
                         type:       'GET',
                         dataType:   'json',
                         async:      true,
 
                         success: function(data, status) {
                             if(data[0]) {
-                                swal("Usunięto!", "Poprawnie usunięto kategorie.", "success");
+                                swal("Usunięto!", "Poprawnie usunięto oferte.", "success");
 
                                 // tricky thing but works so it's fine :)
                                 $('#category-' + id).addClass('hidden');

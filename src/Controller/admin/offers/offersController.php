@@ -7,6 +7,7 @@ namespace App\Controller\admin\offers;
 use App\Entity\Offer;
 use App\Form\OfferType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -58,5 +59,39 @@ class offersController extends AbstractController
             'form_edit' => $form_edit,
             'offers' => $offersRepo->findAll()
         ]);
+    }
+
+    /**
+     * @Route("/adminpanel/offers/{id}/delete", name="adminOfferDelete")
+     * @param Request $request
+     * @param $id
+     * @return JsonResponse
+     * @throws \Exception
+     */
+    public function deleteOffer(Request $request, $id)
+    {
+        try {
+            $entityManager = $this->getDoctrine()->getManager();
+            $offer = $this->getDoctrine()->getRepository(Offer::class)->find($id);
+
+            if($offer !== NULL)
+            {
+                // finally, delete the OFFER
+                $entityManager->remove($offer);
+                $entityManager->flush();
+
+                $data[0] = true;
+            }
+            else
+                $data[0] = false;
+
+        } catch (\Exception $e) {
+            $data[0] = false;
+        }
+
+        if ($request->isXmlHttpRequest() || $request->query->get('showJson') == 1)
+            return new JsonResponse($data);
+        else
+            throw new \Exception('Not allowed usage');
     }
 }
