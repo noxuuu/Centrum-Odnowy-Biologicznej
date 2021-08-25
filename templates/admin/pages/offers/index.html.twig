@@ -68,6 +68,18 @@
             {{ form_widget(form_add.describtion) }}
         </div>
         <div class="form-group">
+            <label>Przeciwwskazania</label>
+
+            <div class="input-group">
+                <input type="text" id="offer_contraindications" name="contraindications[]" required="required" class="form-control">
+                <div class="input-group-btn">
+                    <button class="btn btn-success" type="button" onclick="addContraindicationsFields();"> <i class="iconsmind-Add" aria-hidden="true"></i></button>
+                </div>
+            </div>
+
+            <div id="contraindicationsAdditionalFields"></div>
+        </div>
+        <div class="form-group">
             <label>Aftercare: </label>
             {{ form_widget(form_add.aftercare) }}
         </div>
@@ -85,6 +97,23 @@
 
 {% block javascripts %}
     <script>
+        var room = 1;
+
+        function addContraindicationsFields() {
+            room++;
+            var objTo = document.getElementById('contraindicationsAdditionalFields')
+            var divtest = document.createElement("div");
+            divtest.setAttribute("class", "form-group additional"+room);
+            var rdiv = 'additional'+room;
+            divtest.innerHTML = '<div class="input-group"> <input type="text" class="form-control" required="required" name="contraindications[]"><div class="input-group-btn"> <button class="btn btn-danger" type="button" onclick="removeAddedField('+ room +');"> <i class="iconsmind-Remove" aria-hidden="true"></i> </button></div></div>';
+
+            objTo.appendChild(divtest)
+        }
+
+        function removeAddedField(rid) {
+            $('.additional'+rid).remove();
+        }
+
         function confirmDelete(id) {
             swal({
                     title: "Jesteś pewien?",

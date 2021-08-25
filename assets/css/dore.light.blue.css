@@ -4564,3 +4564,7 @@ a.ck.ck-button.ck-on:not(.ck-disabled):hover {
 .hidden {
   display: none!important;
 }
+
+#contraindicationsAdditionalFields {
+  margin-top: 1rem;
+}
