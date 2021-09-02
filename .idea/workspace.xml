@@ -40,8 +40,14 @@
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/dore.light.blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/dore.light.blue.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/dore.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/dore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/admin/offers/offersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/offers/offersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/common/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/common/widgets/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/widgets/navigation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/common/widgets/pageTitle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/widgets/pageTitle.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/pages/offers/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/offers/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +57,14 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -152,7 +166,8 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/pages/offer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -165,11 +180,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\js" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\css\plugins" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\offers\add" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\offer" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\team" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\categories" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller\admin" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\src\Controller\admin\categories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets" />
@@ -202,7 +217,7 @@
       <workItem from="1628444521605" duration="15186000" />
       <workItem from="1628708072365" duration="20400000" />
       <workItem from="1629484906679" duration="7927000" />
-      <workItem from="1629555330767" duration="21937000" />
+      <workItem from="1629555330767" duration="35496000" />
     </task>
     <servers />
   </component>
@@ -230,6 +245,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628440882830" />
+    <state x="688" y="-753" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1630564643261">
+      <screen x="0" y="-1080" width="1920" height="1050" />
+    </state>
+    <state x="688" y="-753" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/0.-1080.1920.1050/1920.-621.1920.1050@0.-1080.1920.1050" timestamp="1630564643261" />
     <state x="122" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1628624758656">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -271,9 +290,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628020626313" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1629500693229">
+    <state x="560" y="-945" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1630564614860">
+      <screen x="0" y="-1080" width="1920" height="1050" />
+    </state>
+    <state x="560" y="-945" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1050/0.-1080.1920.1050/1920.-621.1920.1050@0.-1080.1920.1050" timestamp="1630564614860" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1629925318152">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1629500693229" />
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1629925318152" />
   </component>
 </project>

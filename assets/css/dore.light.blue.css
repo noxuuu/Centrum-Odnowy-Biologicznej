@@ -2497,23 +2497,27 @@ select.form-control:not([size]):not([multiple]) {
 .btn-group-icon {
   line-height: 22px; }
 
-.valid-tooltip,
-.invalid-tooltip {
+input.form-control.invalid-tooltip, input.form-control.valid-tooltip {
+  display: block;
+}
+
+label .valid-tooltip,
+label .invalid-tooltip {
   border-radius: 15px;
   padding: 0.5rem 1rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.76rem; }
 
-.valid-tooltip {
+label .valid-tooltip {
   background-color: #3e884f;
   margin-top: -0.2rem; }
 
-.invalid-tooltip {
+label .invalid-tooltip {
   background-color: #c43d4b;
   margin-top: -0.2rem; }
 
-.valid-tooltip:after {
+label .valid-tooltip:after {
   content: "";
   position: absolute;
   top: -5px;
@@ -2525,7 +2529,7 @@ select.form-control:not([size]):not([multiple]) {
   border-left: solid 5px transparent;
   border-right: solid 5px transparent; }
 
-.invalid-tooltip:after {
+label .invalid-tooltip:after {
   content: "";
   position: absolute;
   top: -5px;
@@ -2566,6 +2570,7 @@ select.form-control:not([size]):not([multiple]) {
   border-radius: 0.2rem;
   right: 4px;
   color: #c43d4b; }
+
 
 .was-validated .form-control:invalid ~ .invalid-feedback,
 .was-validated .form-control:invalid ~ .invalid-icon,

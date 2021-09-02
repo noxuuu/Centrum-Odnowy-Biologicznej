@@ -23,17 +23,39 @@ class offersController extends AbstractController
      * Get common of admin
      * @Route("/adminpanel/offers", name="adminOffers")
      */
-    public function offers(Request $request)
+    public function offers()
     {
         // get repos
         $offersRepo = $this->getDoctrine()->getRepository(Offer::class);
 
         // create and handle form
         $offer = new Offer();
+        $form_edit = $this->createForm(OfferType::class, $offer);
+
+        // return view
+        return $this->render('admin/pages/offers/index.html.twig', [
+            'mainTitle' => 'Centrum odnowy biologicznej',
+            'pageTitle' => 'Oferta',
+            'breadcrumbs' => [
+                ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
+                ['Oferta', $this->generateUrl('adminOffers')]
+            ],
+            'form_edit' => $form_edit,
+            'offers' => $offersRepo->findAll()
+        ]);
+    }
+
+    /**
+     * Create new offer
+     * @Route("/adminpanel/offers/add", name="adminOffersAdd")
+     */
+    public function addOffer(Request $request)
+    {
+        // create and handle form
+        $offer = new Offer();
         $entityManager = $this->getDoctrine()->getManager();
 
         $form_add = $this->createForm(OfferType::class, $offer);
-        $form_edit = $this->createForm(OfferType::class, $offer);
 
         $form_add->handleRequest($request);
 
@@ -48,16 +70,15 @@ class offersController extends AbstractController
         }
 
         // return view
-        return $this->render('admin/pages/offers/index.html.twig', [
+        return $this->render('admin/pages/offers/add/index.html.twig', [
             'mainTitle' => 'Centrum odnowy biologicznej',
-            'pageTitle' => 'Oferta',
+            'pageTitle' => 'Tworzenie nowej oferty',
             'breadcrumbs' => [
                 ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
-                ['Oferta', $this->generateUrl('adminOffers')]
+                ['Oferta', $this->generateUrl('adminOffers')],
+                ['Tworzenie nowej oferty', $this->generateUrl('adminOffersAdd')]
             ],
-            'form_add' => $form_add->createView(),
-            'form_edit' => $form_edit,
-            'offers' => $offersRepo->findAll()
+            'form_add' => $form_add->createView()
         ]);
     }
 

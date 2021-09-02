@@ -3621,6 +3621,38 @@ $.dore = function(element, options) {
       console.log($(".sfl-single").selectFromLibrary().data("selectFromLibrary").getData());
       */
     }
+
+    /* 03.37. Smart wizard */
+    if ($().smartWizard) {
+      function Be(e) {
+        return !!$().validate && !!$(e).valid()
+      }
+
+      $("#smartWizardValidation").on("showStep", (function(e, t, a, n, o) {
+        "first" === o ? ($("#smartWizardValidation .prev-btn").addClass("disabled"), $("#smartWizardValidation .finish-btn").hide(), $("#smartWizardValidation .next-btn").show()) : "final" === o ? ($("#smartWizardValidation .next-btn").hide(), $("#smartWizardValidation .finish-btn").show(), $("#smartWizardValidation .prev-btn").removeClass("disabled")) : ($("#smartWizardValidation .finish-btn").hide(), $("#smartWizardValidation .next-btn").show(), $("#smartWizardValidation .prev-btn").removeClass("disabled"))
+      }));
+
+      $("#smartWizardValidation").smartWizard({
+        selected: 0,
+        theme: "check",
+        transitionEffect: "fade",
+        showStepURLhash: !1,
+        toolbarSettings: {
+          toolbarPosition: "none"
+        }
+      });
+
+      $("#smartWizardValidation").on("leaveStep", (function(e, t, a, n) {
+        var o = $("#form-step-" + a);
+        if ("forward" === n && o) return Be(o)
+      })), $("#smartWizardValidation .prev-btn").on("click", (function() {
+        return $("#smartWizardValidation").smartWizard("prev"), !0
+      })), $("#smartWizardValidation .next-btn").on("click", (function() {
+        return $("#smartWizardValidation").smartWizard("next"), !0
+      })), $("#smartWizardValidation .finish-btn").on("click", (function(e) {
+        return !Be($("#smartWizardValidation #form-step-1")) || (console.log("Form Done"), !1)
+      }))
+    }
   }
   init();
 };

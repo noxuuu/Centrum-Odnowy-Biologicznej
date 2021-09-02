@@ -1,0 +1,66 @@
+{% extends 'admin/common/base.html.twig' %}
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('smart-wizard') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-12 mb-4">
+            <h5 class="mb-4">Validation</h5>
+            <div class="card mb-4">
+                <div id="smartWizardValidation">
+                    <ul class="card-header">
+                        <li>
+                            <a href="#step-0">Step 1<br>
+                                <small>First step description</small></a>
+                        </li>
+                        <li>
+                            <a href="#step-1">Step 2<br>
+                                <small>Second step description</small></a>
+                        </li>
+                        <li>
+                            <a href="#step-2">Step 3<br>
+                                <small>Third step description</small></a>
+                        </li>
+                    </ul>
+                    <div class="card-body">
+                        <div id="step-0">
+                            <form class="tooltip-label-right" id="form-step-0" name="form-step-0" novalidate>
+                                <div class="form-group position-relative">
+                                    <label for="email">Email address</label> <input class="form-control" name="emailValidation" placeholder="Your email address" type="email">
+                                </div>
+                                <div class="form-group position-relative">
+                                    <label for="password">Password</label> <input class="form-control" id="passwordValidation" name="passwordValidation" placeholder="Your password" type="password">
+                                </div>
+                            </form>
+                        </div>
+                        <div id="step-1">
+                            <form class="tooltip-label-right" id="form-step-1" name="form-step-1" novalidate>
+                                <div class="form-group position-relative error-l-75">
+                                    <label for="name">First Name</label> <input class="form-control" id="nameValidation" name="nameValidation" placeholder="Your first name" required="" type="text">
+                                </div>
+                                <div class="form-group position-relative error-l-75">
+                                    <label for="lastName">Last Name</label> <input class="form-control" id="lastNameValidation" name="lastNameValidation" placeholder="Your last name" required="" type="text">
+                                </div>
+                            </form>
+                        </div>
+                        <div id="step-2">
+                            <h4 class="text-center">Thank you for your feedback!</h4>
+                            <p class="muted text-center p-4">Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality.</p>
+                        </div>
+                    </div>
+                    <div class="btn-toolbar custom-toolbar text-center card-body pt-0">
+                        <button class="btn btn-secondary prev-btn" type="button">Previous</button> <button class="btn btn-secondary next-btn" type="button">Next</button> <button class="btn btn-secondary finish-btn" type="submit">Finish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('smart-wizard') }}
+    {{ encore_entry_script_tags('jquery-validate') }}
+{% endblock %}

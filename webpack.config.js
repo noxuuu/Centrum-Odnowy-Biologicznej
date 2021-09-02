@@ -35,6 +35,8 @@ Encore
     .addEntry('Chart.bundle', './assets/js/Chart.bundle.js')
     .addEntry('owl.carousel', './assets/js/owl.carousel.js')
     .addEntry('dropzone', './assets/js/dropzone.js')
+    .addEntry('smart-wizard', './assets/js/jquery.smartWizard.min.js')
+    .addEntry('jquery-validate', './assets/js/jquery.validate.min.js')
 
     // plugins here
     .addEntry('select-album', './assets/js/plugins/select-album.js')
