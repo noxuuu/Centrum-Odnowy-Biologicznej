@@ -23,7 +23,8 @@
         {% block body %}{% endblock %}
 
         {% if app.request.get('_route') == 'adminCategories' or
-            app.request.get('_route') == 'adminOffers' %}
+            app.request.get('_route') == 'adminOffers' or
+            app.request.get('_route') == 'adminOfferCombinations' %}
             <div class="modal modal-right" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="modal_add" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">

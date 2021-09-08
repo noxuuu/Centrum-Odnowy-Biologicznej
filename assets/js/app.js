@@ -6,6 +6,7 @@
  */
 
 import('../css/app.scss');
+import('../css/quill.snow.css')
 import('../css/perfect-scrollbar.css');
 import('../css/albums-app.css'); // albums app
 import('../css/bootstrap-float-label.min.css'); // form inside input labels

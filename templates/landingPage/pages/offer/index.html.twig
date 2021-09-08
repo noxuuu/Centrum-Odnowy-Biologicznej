@@ -13,9 +13,8 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="single-courses-box">
                                 <div class="courses-image">
-                                    <a href="{{ path('offerDetailsPage') }}">
-                                        {# <img src="{{ asset('assets/images/offer/'~ category.getImage()) }}" alt="{{ category.getName() }}"> #}
-                                        <img src="{{ asset('assets/images/offer/offer-bg.jpg') }}" alt="{{ category.getName() }}">
+                                    <a href="{% if category.getSubCategories()|length == 0 %}{{ path('offerDetailsPage', {'offer': category.getId()|getRandomOffer()}) }}{% else %}{{ path('offerPage', {'category': category.getId()}) }}{% endif %}">
+                                        <img src="{{ asset('assets/images/offer/'~ category.getImage()) }}" alt="{{ category.getName() }}">
                                     </a>
                                 </div>
                                 <div class="courses-content">

@@ -15,6 +15,7 @@
                     </a>
                 </li>
                 <li {% if app.request.get('_route') == 'adminOffers'
+                        or app.request.get('_route') == 'adminOfferCombinations'
                         or app.request.get('_route') == 'adminOffersAdd' %}class="active"{% endif %}>
                     <a href="{{ path('adminOffers' )}}">
                         <i class="iconsmind-Star"></i>
@@ -50,9 +51,3 @@
         </div>
     </div>
 </div>
-
-Kategorie
-Uslugi
-Promocje
- - wszystkie promocje
- - wyroznione promocje

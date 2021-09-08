@@ -39,14 +39,35 @@
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/common/widgets/slider.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/contact/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../PortfolioKasia/templates/landingPage/pages/homepage/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/centrumodnowybiologicznej.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/centrumodnowybiologicznej.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7baa44b-c7b7-4e5c-be35-e5e0834536de.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7baa44b-c7b7-4e5c-be35-e5e0834536de.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/dore.light.blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/dore.light.blue.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/plugins/smart_wizard.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/plugins/smart_wizard.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/dore.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/dore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/team/agnieszka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/team/agnieszka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/team/natalia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/team/natalia.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/team/wiktoria.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/team/wiktoria.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/admin/offers/offersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/admin/offers/offersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/landingPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/landingPageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Offer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/OfferType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OfferType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/common/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/common/widgets/navigation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/widgets/navigation.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/common/widgets/pageTitle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/common/widgets/pageTitle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/categories/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/categories/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/pages/offers/add/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/offers/add/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/pages/offers/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/pages/offers/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landingPage/common/widgets/breadcrumbs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/common/widgets/breadcrumbs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landingPage/pages/offer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landingPage/pages/offer/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,6 +173,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
       <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
     </include_path>
   </component>
   <component name="ProjectId" id="1uIu18cZ92hHeB3SvkJRCSFWsa9" />
@@ -166,7 +188,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/images/team" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -179,18 +201,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\js" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\css\plugins" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\offers\add" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\offer" />
-      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\team" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\js" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\offer" />
       <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\landingPage\pages\offer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\team" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\public\assets\images\offer" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\templates\admin\pages\offers\combinations" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\css" />
+      <recent name="H:\Webdev\Projects\Symfony\centrumodnowybiologicznej\assets\js" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -217,7 +239,9 @@
       <workItem from="1628444521605" duration="15186000" />
       <workItem from="1628708072365" duration="20400000" />
       <workItem from="1629484906679" duration="7927000" />
-      <workItem from="1629555330767" duration="35496000" />
+      <workItem from="1629555330767" duration="51222000" />
+      <workItem from="1631081488779" duration="9319000" />
+      <workItem from="1631097792414" duration="19357000" />
     </task>
     <servers />
   </component>
@@ -258,9 +282,10 @@
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628618730938" />
     <state x="2610" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1626284058919" />
-    <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1629924543034">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2610" y="-341" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1631142050237">
+      <screen x="1920" y="-621" width="1920" height="1050" />
     </state>
+    <state x="2610" y="-341" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/0.-1080.1920.1050/1920.-621.1920.1050@1920.-621.1920.1050" timestamp="1631142050237" />
     <state x="690" y="280" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1629924543034" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1628537572449">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -282,9 +307,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628709804442" />
-    <state x="670" y="248" key="NewPhpClassDialog" timestamp="1628438020770">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2590" y="-373" key="NewPhpClassDialog" timestamp="1631141619846">
+      <screen x="1920" y="-621" width="1920" height="1050" />
     </state>
+    <state x="2590" y="-373" key="NewPhpClassDialog/0.0.1920.1050/0.-1080.1920.1050/1920.-621.1920.1050@1920.-621.1920.1050" timestamp="1631141619846" />
     <state x="670" y="248" key="NewPhpClassDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1628438020770" />
     <state x="461" y="170" key="SettingsEditor" timestamp="1628020626313">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -294,9 +320,18 @@
       <screen x="0" y="-1080" width="1920" height="1050" />
     </state>
     <state x="560" y="-945" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1050/0.-1080.1920.1050/1920.-621.1920.1050@0.-1080.1920.1050" timestamp="1630564614860" />
+    <state x="2587" y="-497" width="812" height="801" key="find.popup" timestamp="1631129640107">
+      <screen x="1920" y="-621" width="1920" height="1050" />
+    </state>
+    <state x="2587" y="-497" width="812" height="801" key="find.popup/0.0.1920.1050/0.-1080.1920.1050/1920.-621.1920.1050@1920.-621.1920.1050" timestamp="1631129640107" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1629925318152">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1629925318152" />
+    <state x="2543" y="-394" width="672" height="678" key="search.everywhere.popup" timestamp="1631097849757">
+      <screen x="1920" y="-621" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/0.-1080.1920.1050/1920.-621.1920.1050@0.0.1920.1050" timestamp="1631096204431" />
+    <state x="2543" y="-394" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/0.-1080.1920.1050/1920.-621.1920.1050@1920.-621.1920.1050" timestamp="1631097849757" />
   </component>
 </project>

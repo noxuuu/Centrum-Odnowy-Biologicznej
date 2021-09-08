@@ -45,6 +45,16 @@ class Offer
      */
     private $offerCombinations;
 
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $contraindications = [];
+
+    /**
+     * @ORM\Column(type="string", length=1024)
+     */
+    private $effects;
+
     public function __construct()
     {
         $this->offerCombinations = new ArrayCollection();
@@ -129,6 +139,30 @@ class Offer
                 $offerCombination->setOffer(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getContraindications(): ?array
+    {
+        return $this->contraindications;
+    }
+
+    public function setContraindications(?array $contraindications): self
+    {
+        $this->contraindications = $contraindications;
+
+        return $this;
+    }
+
+    public function getEffects(): ?string
+    {
+        return $this->effects;
+    }
+
+    public function setEffects(string $effects): self
+    {
+        $this->effects = $effects;
 
         return $this;
     }

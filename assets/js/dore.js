@@ -3650,7 +3650,7 @@ $.dore = function(element, options) {
       })), $("#smartWizardValidation .next-btn").on("click", (function() {
         return $("#smartWizardValidation").smartWizard("next"), !0
       })), $("#smartWizardValidation .finish-btn").on("click", (function(e) {
-        return !Be($("#smartWizardValidation #form-step-1")) || (console.log("Form Done"), !1)
+        return !Be($("#smartWizardValidation #form-step-1")) || (finishOfferWizard(), !1)
       }))
     }
   }

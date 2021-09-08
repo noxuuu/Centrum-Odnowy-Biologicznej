@@ -2,34 +2,37 @@
 
 namespace App\Form;
 
-use App\Entity\Category;
-use App\Entity\Offer;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\OfferCombination;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class OfferType extends AbstractType
+class OfferCombinationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('category', EntityType::class, array(
-                'class' => Category::class,
-                'choice_label' => 'name',
+            ->add('price', IntegerType::class, [
                 'label' => false,
                 'required' => true,
                 'attr' => [
                     'class' => 'form-control'
-                ])
-            );
+                ]
+            ])
+            ->add('time', IntegerType::class, [
+                'label' => false,
+                'required' => true,
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Offer::class,
+            'data_class' => OfferCombination::class,
         ]);
     }
 }

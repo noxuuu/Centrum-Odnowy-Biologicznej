@@ -3,28 +3,25 @@
 {% block body %}
     <div class="row">
         <div class="col-12 list">
-            {% if offers|length > 0 %}
-                {% for offer in offers %}
-                    <div class="card d-flex flex-row mb-3" id="category-{{ offer.getId()|replace({' ': "-"}) }}">
+            {% if combinations|length > 0 %}
+                {% for combination in combinations %}
+                    <div class="card d-flex flex-row mb-3" id="combination-{{ combination.getId() }}">
                         <div class="d-flex flex-grow-1 min-width-zero">
                             <div class="pl-2 d-flex flex-grow-1 min-width-zero">
                                 <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
                                     <a class="list-item-heading mb-1 truncate w-xs-100">
-                                        {{ offer.getName() }}
+                                        {{ combination.getOffer().getName() }}
                                     </a>
                                     <div class="w-15 w-xs-50 ">
-                                        <span class="badge badge-pill badge-outline-primary">{{ offer.getCategory().getName() }}</span>
+                                        <span class="badge badge-pill badge-primary">{{ combination.getPrice() }} zł</span>
                                     </div>
                                     <div class="w-15 w-xs-50 ">
-                                        <a href="{{ path('adminOfferCombinations', {'offer': offer.getId()}) }}">
-                                            <span class="badge badge-pill badge-outline-primary">{{ offer.getOfferCombinations()|length }} Kombinacje</span>
-                                        </a>
+                                        <span class="badge badge-pill badge-primary">{{ combination.getTime() }} min</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="pl-1 align-self-center pr-4">
-                                <button type="button" data-toggle="modal" data-target="#edit-{{ offer.getId() }}" class="btn btn-primary btn-sm mr-1">Edytuj</button>
-                                <button type="button" onclick="confirmDelete({{ offer.getId() }})" class="btn btn-primary btn-sm mr-1">Usuń</button>
+                                <button type="button" onclick="confirmDelete({{ combination.getId() }})" class="btn btn-primary btn-sm mr-1">Usuń</button>
                             </div>
                         </div>
                     </div>
@@ -37,7 +34,7 @@
                     <div class="d-flex flex-grow-1 min-width-zero">
                         <div class="card-body align-self-center d-flex flex-column justify-content-between min-width-zero align-items-lg-center">
                             <a class="w-100">
-                                <p class="list-item-heading mb-1 truncate">Nie znaleziono żadnej oferty, utwórz pierwszą używając przycisku powyżej.</p>
+                                <p class="list-item-heading mb-1 truncate">Nie znaleziono żadnej kombinacji, utwórz pierwszą używając przycisku powyżej.</p>
                             </a>
                         </div>
                     </div>
@@ -47,12 +44,38 @@
     </div>
 {% endblock %}
 
+{% block modal_add %}
+    <div class="modal-header">
+        <h5 class="modal-title">Dodaj nową kombinacje</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    {{ form_start(form_add) }}
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Cena:</label>
+            {{ form_widget(form_add.price) }}
+        </div>
+        <div class="form-group">
+            <label>Czas wykonania: </label>
+            {{ form_widget(form_add.time) }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Anuluj</button>
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+    </div>
+    {{ form_row(form_add._token) }}
+    {{ form_end(form_add, {'render_rest': false}) }}
+{% endblock %}
+
 {% block javascripts %}
     <script>
         function confirmDelete(id) {
             swal({
                     title: "Jesteś pewien?",
-                    text: "Tej oferty nie będzie można przywrócić!",
+                    text: "Tej kombinacji nie będzie można przywrócić!",
                     type: "warning",
                     showCancelButton: true,
                     showLoaderOnConfirm: true,
@@ -64,17 +87,17 @@
                 },
                 function(){
                     $.ajax({
-                        url:        '/adminpanel/offers/' + id + '/delete/',
+                        url:        '/adminpanel/offer/combinations/' + id + '/delete',
                         type:       'GET',
                         dataType:   'json',
                         async:      true,
 
                         success: function(data, status) {
                             if(data[0]) {
-                                swal("Usunięto!", "Poprawnie usunięto oferte.", "success");
+                                swal("Usunięto!", "Poprawnie usunięto kombinacje.", "success");
 
                                 // tricky thing but works so it's fine :)
-                                $('#category-' + id).addClass('hidden');
+                                $('#combination-' + id).addClass('hidden');
                             }
                         },
                         error : function(xhr, textStatus, errorThrown) {

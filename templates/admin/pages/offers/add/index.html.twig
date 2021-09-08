@@ -8,51 +8,88 @@
 {% block body %}
     <div class="row">
         <div class="col-12 mb-4">
-            <h5 class="mb-4">Validation</h5>
             <div class="card mb-4">
                 <div id="smartWizardValidation">
                     <ul class="card-header">
                         <li>
-                            <a href="#step-0">Step 1<br>
-                                <small>First step description</small></a>
+                            <a href="#step-0">Krok 1<br>
+                                <small>Nazwa oferty</small>
+                            </a>
                         </li>
                         <li>
-                            <a href="#step-1">Step 2<br>
-                                <small>Second step description</small></a>
+                            <a href="#step-1">Krok 2<br>
+                                <small>Opis oferty</small>
+                            </a>
                         </li>
                         <li>
-                            <a href="#step-2">Step 3<br>
-                                <small>Third step description</small></a>
+                            <a href="#step-2">Krok 3<br>
+                                <small>Przeciwwskazania</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#step-3">Krok 4<br>
+                                <small>Efekty zabiegu</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#step-4">Krok 5<br>
+                                <small>Pielęgnacja pozabiegowa</small>
+                            </a>
                         </li>
                     </ul>
                     <div class="card-body">
                         <div id="step-0">
                             <form class="tooltip-label-right" id="form-step-0" name="form-step-0" novalidate>
                                 <div class="form-group position-relative">
-                                    <label for="email">Email address</label> <input class="form-control" name="emailValidation" placeholder="Your email address" type="email">
-                                </div>
-                                <div class="form-group position-relative">
-                                    <label for="password">Password</label> <input class="form-control" id="passwordValidation" name="passwordValidation" placeholder="Your password" type="password">
+                                    <label for="name">Nazwa oferty</label>
+                                    <input type="text" name="name" id="name" required="required" class="form-control mb-4">
+
+                                    <label for="offer[category]">Kategoria oferty</label>
+                                    {{ form_start(form_add) }}
+                                    {{ form_widget(form_add.category) }}
+                                    {{ form_end(form_add, {'render_rest': false}) }}
                                 </div>
                             </form>
                         </div>
                         <div id="step-1">
                             <form class="tooltip-label-right" id="form-step-1" name="form-step-1" novalidate>
-                                <div class="form-group position-relative error-l-75">
-                                    <label for="name">First Name</label> <input class="form-control" id="nameValidation" name="nameValidation" placeholder="Your first name" required="" type="text">
-                                </div>
-                                <div class="form-group position-relative error-l-75">
-                                    <label for="lastName">Last Name</label> <input class="form-control" id="lastNameValidation" name="lastNameValidation" placeholder="Your last name" required="" type="text">
-                                </div>
+                                <h5 class="mb-4">Na czym polega zabieg?</h5>
+                                <div class="html-editor" id="descQuill"></div>
                             </form>
                         </div>
                         <div id="step-2">
-                            <h4 class="text-center">Thank you for your feedback!</h4>
-                            <p class="muted text-center p-4">Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality.</p>
+                            <form class="tooltip-label-right" id="form-step-2" name="form-step-2" novalidate>
+                                <div class="form-group position-relative error-l-75">
+                                    <div class="input-group">
+                                        <input type="text" id="offer_contraindications" name="contraindications[]" required="required" class="form-control">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-success" type="button" onclick="addContraindicationsFields();">
+                                                <i class="iconsmind-Add" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div id="contraindicationsAdditionalFields"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="step-3">
+                            <form class="tooltip-label-right" id="form-step-3" name="form-step-3" novalidate>
+                                <h5 class="mb-4">Efekty zabiegu</h5>
+                                <div class="html-editor" id="effectsQuill"></div>
+                            </form>
+                        </div>
+                        <div id="step-4">
+                            <form class="tooltip-label-right" id="form-step-3" name="form-step-4" novalidate>
+                                <h5 class="mb-4">Pielęgnacja pozabiegowa</h5>
+                                <div class="html-editor" id="aftercareQuill"></div>
+                            </form>
                         </div>
                     </div>
                     <div class="btn-toolbar custom-toolbar text-center card-body pt-0">
-                        <button class="btn btn-secondary prev-btn" type="button">Previous</button> <button class="btn btn-secondary next-btn" type="button">Next</button> <button class="btn btn-secondary finish-btn" type="submit">Finish</button>
+                        <button class="btn btn-secondary prev-btn" type="button">Wstecz</button>
+                        <button class="btn btn-secondary next-btn" type="button">Następna</button>
+                        <button class="btn btn-secondary finish-btn" type="submit">Utwórz nową</button>
                     </div>
                 </div>
             </div>
@@ -63,4 +100,52 @@
 {% block javascripts %}
     {{ encore_entry_script_tags('smart-wizard') }}
     {{ encore_entry_script_tags('jquery-validate') }}
+
+    <script>
+        var room = 1;
+
+        function addContraindicationsFields() {
+            room++;
+            var objTo = document.getElementById('contraindicationsAdditionalFields')
+            var divtest = document.createElement("div");
+            divtest.setAttribute("class", "form-group additional"+room);
+            var rdiv = 'additional'+room;
+            divtest.innerHTML = '<div class="input-group"> <input type="text" class="form-control" required="required" name="contraindications[]"><div class="input-group-btn"> <button class="btn btn-danger" type="button" onclick="removeAddedField('+ room +');"> <i class="iconsmind-Remove" aria-hidden="true"></i> </button></div></div>';
+
+            objTo.appendChild(divtest)
+        }
+
+        function removeAddedField(rid) {
+            $('.additional'+rid).remove();
+        }
+
+        function finishOfferWizard() {
+            // contraindications
+            let contraindications = [];
+            $("input[name='contraindications[]']").each(function() {
+                contraindications.push(this.value);
+            });
+
+            // call ajax to add offer
+            $.ajax({
+                url:        '{{ path("ajaxOfferPost") }}',
+                type:       'POST',
+                dataType:   'json',
+                data: {
+                    'name': $("input[name='name']").val(),
+                    'category': $("#offer_category").val(),
+                    'description': $("#descQuill > .ql-editor").html(),
+                    'effects': $("#effectsQuill > .ql-editor").html(),
+                    'aftercare': $("#aftercareQuill > .ql-editor").html(),
+                    'contraindications': contraindications
+                },
+                success: function(response, status) {
+                    swal("Sukces", "Oferta utworzona poprawnie.", "success");
+                },
+                error : function(xhr, textStatus, errorThrown) {
+                    swal("Błąd", " Wystąpił niespodziewany błąd, skontaktuj się z administratorem.", "error");
+                }
+            });
+        }
+    </script>
 {% endblock %}
