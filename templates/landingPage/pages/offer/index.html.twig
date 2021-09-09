@@ -13,7 +13,11 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="single-courses-box">
                                 <div class="courses-image">
+<<<<<<< HEAD
+                                    <a href="{% if category.getSubCategories()|length == 0 %}{{ category.getId()|getRandomOfferLink() }}{% else %}{{ path('offerPage', {'category': category.getId()}) }}{% endif %}">
+=======
                                     <a href="{% if category.getSubCategories()|length == 0 %}{{ path('offerDetailsPage', {'offer': category.getId()|getRandomOffer()}) }}{% else %}{{ path('offerPage', {'category': category.getId()}) }}{% endif %}">
+>>>>>>> master
                                         <img src="{{ asset('assets/images/offer/'~ category.getImage()) }}" alt="{{ category.getName() }}">
                                     </a>
                                 </div>
@@ -29,6 +33,6 @@
             {% endif %}
         </div>
     </div>
-    <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/offer/shape.png') }}"></div>
+    <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/page-banner/shape_ltr.png') }}"></div>
 </section>
 {% endblock %}

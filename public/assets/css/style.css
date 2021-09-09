@@ -4586,8 +4586,10 @@ img {
     margin-left: 5px
 }
 .courses-details-info {
-    border-radius: 5px;
-    padding: 12px 12px 50px;
+    border-radius: 25px;
+    border: 4px solid #feb8b8;
+    padding: 6px 6px 20px;
+    margin-bottom: 20px;
 }
 
 .content-section-title {
@@ -7885,4 +7887,17 @@ img {
 .slider-logo {
     max-width: 450px;
     margin-top: -50px;
+}
+
+.accordion-content > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.subcategories {
+    list-style-type: disc;
+}
+
+.subcategory {
+    margin-top: 5px;
 }

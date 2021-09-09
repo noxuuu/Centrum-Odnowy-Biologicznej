@@ -7,157 +7,72 @@
 <section class="pricing-area pt-50 pb-70">
     <div class="container">
         <div class="row">
-
             <div class="col-lg-3 col-sm-12">
-                <div class="faq-accordion">
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <div class="accordion-title active">
-                                <i class="bx bxs-down-arrow"></i> Zabiegi na twarz
-                            </div>
-                            <div class="accordion-content show">
-                                Zabiegi przeciwzmarszczkowe / odżywcze
-                                <ul class="list">
-                                    <li>Mezoterapia igłowa</li>
-                                    <li>Mezoterapia mikroigłowa</li>
-                                    <li>Infuzja tlenowa</li>
-                                    <li>Oksybrazja</li>
-                                    <li>Ferulac</li>
-                                    <li>Mandelac</li>
-                                    <li>Lactipeel</li>
-                                    <li>Argipeel</li>
-                                    <li>Azelac</li>
-                                </ul>
-                                Zabiegi dla skóry naczyniowej
-                                Zabiegi na przebarwienia
-                                Zabiegi na trądzik
-                                Zabiegi złuszczające
-                                Zabiegi bankietowe
-                                Zabiegi na oczy
-                                Peelingi medyczne Mediderma
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-title">
-                                <i class="bx bxs-down-arrow"></i> Kosmetologia estetyczna
-                            </div>
-                            <div class="accordion-content">
-                                <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-title">
-                                <i class="bx bxs-down-arrow"></i> Zabiegi na ciało
-                            </div>
-                            <div class="accordion-content">
-                                <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-title">
-                                <i class="bx bxs-down-arrow"></i> Depilacja
-                            </div>
-                            <div class="accordion-content">
-                                <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-title">
-                                <i class="bx bxs-down-arrow"></i> Stylizacja rzęs i brwi
-                            </div>
-                            <div class="accordion-content">
-                                <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% include 'landingPage/common/widgets/categoriesTree.html.twig' with {'level': 'main'} %}
             </div>
 
             <div class="col-lg-6 col-sm-12">
-
                 <div class="services-details-desc">
                     <div class="content-image">
-                        <img src="{{ asset('assets/images/services-details/shape.jpg') }}" alt="image">
-                        <h4 class="sub-title">Dermapen 4</h4>
+                        <img src="{{ asset('assets/images/page-banner/flower.jpg') }}" alt="image">
+                        <h4 class="sub-title">{{ offer.getName() }}</h4>
                     </div>
 
-                    <div class="content-desc">
-                        <h3 class="content-section-title">Na czym polega zabieg?</h3>
-                        <p>DERMAPEN 4 najnowsza technologia.&nbsp;TO FRAKCYJNE MIKRONAKŁUWANIE&nbsp; – 1920 nakłuć na sekundę</p>
-                        <p>Dermapen 4 – pierwsze na świecie w pełni cyfrowe urządzenie do frakcyjnego&nbsp;mikronakłuwania skóry w najdoskonalszym wydaniu, &nbsp;służące&nbsp;do regeneracji&nbsp;skóry&nbsp;poprzez stymulowanie jej do samoodnowy.</p>
-                        <p>Dzięki DERMAPEN 4 możliwe jest bardzo skuteczne dostarczanie substancji czynnych do naskórka i skóry właściwej. Powstałe w skórze mikrourazy stymulują fibroblasty oraz jej naturalną zdolność do naprawy, co skutkuje zainicjowaniem wzmożonej produkcji&nbsp;kolagenu, elastyny i kwasu hialuronowego. Te trzy kluczowe składniki mają wpływ na&nbsp;dobrą kondycję skóry – jej gęstość, elastyczność i odżywienie.</p>
-                    </div>
+                    <div class="content-desc">{{ offer.getDescribtion()|raw }}</div>
 
                     <div class="content-contraindications">
                         <h3 class="content-section-title">Jakie są przeciwwskazania?</h3>
                         <ul class="list">
-                            <li>choroba nowotworowa</li>
-                            <li>aktywny trądzik</li>
-                            <li>ciąża lub karmią piersią</li>
-                            <li>opryszczka</li>
-                            <li>stan zapalny w okolicy zabiegowej</li>
-                            <li>zakażenia wirusowe, bakteryjne, grzybicze</li>
-                            <li>zaburzenia krzepliwości krwi</li>
-                            <li>zabiegi laserowe (ok. 4 tyg od zabiegu z laserem)</li>
-                            <li>terapia retinoidami (po ok. 6 miesiącach od zakończenia terapii) </li>
-                            <li>stosowanie sterydów doustnie i miejscowo w obszarze zabiegowym</li>
-                            <li>cukrzyca</li>
-                            <li>łuszczyca</li>
+                            {% for i in offer.getContraindications() %}
+                                <li>{{ i }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
 
                     <div class="content-effects">
                         <h3 class="content-section-title">Jakie są efekty zabiegu?</h3>
-                        <ul class="list">
-                            <li>widoczne spłycenie zmarszczek</li>
-                            <li>efekt pogrubienia, zagęszczenia skóry</li>
-                            <li>naturalna stymulacja produkcji kolagenu</li>
-                            <li>zmniejszenie widoczności porów</li>
-                            <li>redukcja widoczności rozstępów</li>
-                            <li>redukcja blizn potrądzikowych i blizn oparzeniowych</li>
-                            <li>ujednolicenie kolorytu skóry</li>
-                            <li>redukcja przebarwień</li>
-                            <li>poprawa jakości skóry</li>
-                            <li>zwiększenie elastyczności, napięcia</li>
-                            <li>leczenie łysienia</li>
-                        </ul>
-
+                        {{ offer.getEffects()|raw }}
                     </div>
 
                     <div class="content-post-operative-care">
                         <h3 class="content-section-title">Pielęgnacja pozabiegowa</h3>
-                        <p>Bezpośrednio po zabiegu skóra jest równomiernie zaczerwieniona i może być odczuwane<br>
-                            lekkie pieczenie.<br>
-                            Przez co najmniej 3-4 dni po zabiegu należy stosować&nbsp;delikatne kosmetyki do pielęgnacji skóry .<br>
-                            Przez co najmniej 4 tygodnie po zabiegu należy stosować ochronę przeciwsłoneczną, aby<br>
-                            uniknąć podrażnienia skóry i zapobiec powstaniu przebarwień. Rekomendujemy stosowanie<br>
-                            kremu z filtrem 50 SPF.
-                        </p>
+                        {{ offer.getAftercare()|raw }}
+
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-3 col-sm-12">
-                <div class="courses-details-info">
-                    <ul class="info">
-                        <li class="price">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span>Cena</span> 300 zł
-                            </div>
-                        </li>
-                        <li>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span>Czas wykonania zabiegu</span> 60 zł
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="courses-btn-box">
-                        <a class="default-btn" href="#">Zapisz się teraz</a>
+                {% for combination in offer.getOfferCombinations() %}
+                    <div class="courses-details-info">
+                        <ul class="info">
+                            <li class="price">
+                                <div class="text-center mb-4">
+                                    {{ combination.getType()|processType }}
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Cena</span>
+                                    {% if combination.getPrice() == 0 %}
+                                        Indywidualnie
+                                    {% else %}
+                                        {{ combination.getPrice() }} zł
+                                    {% endif %}
+                                </div>
+                            </li>
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Czas wykonania zabiegu</span> {{ combination.getTime() }} min
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="courses-btn-box">
+                            <a class="default-btn" href="#">Zapisz się teraz</a>
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-    <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/pricing-shape.png') }}"></div>
+    <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/page-banner/shape_rtl.png') }}"></div>
 </section>
 {% endblock %}

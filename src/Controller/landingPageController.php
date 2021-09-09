@@ -10,8 +10,11 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\Offer;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class landingPageController extends AbstractController
@@ -93,19 +96,38 @@ class landingPageController extends AbstractController
     }
 
     /**
-     * @Route("/oferta/twarz", name="offerDetailsPage")
+     * @Route("/oferta/{category}/{offer}", name="offerDetailsPage")
+     * @param $category
+     * @param $offer
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \Exception
      */
-    public function offerDetails()
+    public function offerDetails($category, $offer)
     {
+        // get repo's
+        $categoryRepo = $this->getDoctrine()->getRepository(Category::class);
+        $offersRepo = $this->getDoctrine()->getRepository(Offer::class);
+
+        // get valid data from route params
+        $category = $categoryRepo->findOneBy(['name' => $category]);
+        $offer = $offersRepo->findOneBy(['name' => $offer]);
+
+        // when something is wrong with provided data - call exception
+        if($category == null || $offer == null)
+            throw new NotFoundHttpException('Nie znaleziono takiej oferty');
+
+
+
+        // return view
         return $this->render('landingPage/pages/offer/services/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
-            'pageTitle' => 'Zabiegi na twarz',
+            'pageTitle' => $category->getName(),
+            'categories' => $categoryRepo->findAll(),
+            'category' => $category,
+            'offer' => $offer,
             'breadcrumbs' => [
                 ['Strona glowna', $this->generateUrl('homePage')],
                 ['Oferta', $this->generateUrl('offerPage')],
-                ['Zabiegi na twarz', $this->generateUrl('offerDetailsPage')]
+                [$category->getName(), $this->generateUrl('offerDetailsPage', ['category' => $category->getName(), 'offer' => $offer->getName()])]
             ]
         ]);
     }

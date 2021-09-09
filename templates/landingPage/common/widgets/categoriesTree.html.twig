@@ -1,0 +1,41 @@
+
+{% if level == 'main' %}
+    <div class="faq-accordion">
+        <div class="accordion">
+            {% for category_ in categories %}
+                {% if category_.getParent() == null %}
+                    {% set active = false %}
+                    {% if category.getParent() is not null and category_.getName() == category.getParent().getName() %}
+                        {% set active = true %}
+                    {% endif %}
+                    <div class="accordion-item">
+                        <div class="accordion-title {% if active %}active{% endif %}">
+                            <i class="bx bxs-down-arrow"></i> {{ category_.getName() }}
+                        </div>
+                        <div class="accordion-content {% if active %}show{% endif %}">
+                            {% include 'landingPage/common/widgets/categoriesTree.html.twig' with {'level': 'sub', 'parentCategory': category_.getId() } %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <ul>
+    {% for category_ in categories %}
+        {% if category_.getParent is not null %}
+            {% if category_.getParent().getId() == parentCategory  %}
+                <li class="subcategory"><a href="{{ category_|getRandomOfferLink }}">{{ category_.getName() }}</a></li>
+
+                {% if category_ == category %}
+                    <ul class="subcategories">
+                        {% for offer in category|getCategoryOffers %}
+                            <li class="subcategory"><a href="{{ path('offerDetailsPage', {'category': category.getName(), 'offer': offer.getName()}) }}">{{ offer.getName() }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}
