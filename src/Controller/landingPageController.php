@@ -10,7 +10,9 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\FeaturedPromotion;
 use App\Entity\Offer;
+use App\Entity\Promotion;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,10 +31,20 @@ class landingPageController extends AbstractController
      */
     public function homePage()
     {
+        // get repo
+        $promotions = Array();
+        $featuredPromotionsRepo = $this->getDoctrine()->getRepository(FeaturedPromotion::class);
+
+        // get promos and assign it to offer names
+        $offers = $featuredPromotionsRepo->getOffersFromFeaturedPromotions(3);
+        foreach ($offers as $offer)
+            $promotions[$offer['name']] = $featuredPromotionsRepo->getOfferCombinationsFromFeaturedPromotions($offer['name']);
+
         return $this->render('landingPage/pages/homepage/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
             'pageTitle' => 'Landing Page ~ ',
-            'breadcrumbs' => []
+            'breadcrumbs' => [],
+            'promotions' => $promotions
         ]);
     }
 
@@ -116,7 +128,6 @@ class landingPageController extends AbstractController
             throw new NotFoundHttpException('Nie znaleziono takiej oferty');
 
 
-
         // return view
         return $this->render('landingPage/pages/offer/services/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
@@ -151,7 +162,7 @@ class landingPageController extends AbstractController
                 ['Cennik', $this->generateUrl('pricesPage')]
             ],
             'categories' => $categoryRepo->findAll(),
-            'offers' => $offersRepo->findAll()
+            'offers' => $offersRepo->findAll(),
         ]);
     }
 
@@ -162,13 +173,24 @@ class landingPageController extends AbstractController
      */
     public function promotionsPage()
     {
+        // get repo
+        $promotions = Array();
+        $promotionsRepo = $this->getDoctrine()->getRepository(Promotion::class);
+
+        // get promos and assign it to offer names
+        $offers = $promotionsRepo->getOffersFromPromotions(12);
+        foreach ($offers as $offer)
+            $promotions[$offer['name']] = $promotionsRepo->getOfferCombinationsFromPromotions($offer['name']);
+
+
         return $this->render('landingPage/pages/promotions/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
             'pageTitle' => 'Promocje',
             'breadcrumbs' => [
                 ['Strona glowna', $this->generateUrl('homePage')],
                 ['Promocje', $this->generateUrl('promotionsPage')]
-            ]
+            ],
+            'promotions' => $promotions
         ]);
     }
 

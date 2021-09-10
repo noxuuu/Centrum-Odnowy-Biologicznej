@@ -7,106 +7,10 @@
     <section class="pricing-area pt-50 pb-70">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-pricing-table">
-                        <div class="pricing-header">
-                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
-                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
-                        </ul>
-                        <div class="pricing-btn">
-                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-pricing-table">
-                        <div class="pricing-header">
-                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
-                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
-                        </ul>
-                        <div class="pricing-btn">
-                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-pricing-table">
-                        <div class="pricing-header">
-                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
-                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
-                        </ul>
-                        <div class="pricing-btn">
-                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-pricing-table">
-                        <div class="pricing-header">
-                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
-                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
-                        </ul>
-                        <div class="pricing-btn">
-                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-pricing-table">
-                        <div class="pricing-header">
-                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
-                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
-                        </ul>
-                        <div class="pricing-btn">
-                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-pricing-table">
-                        <div class="pricing-header">
-                            <h3>DNA RECOVERY 3+1 GRATIS</h3>
-                            <span>OSZCZĘDZASZ AŻ DO 450 ZŁ!</span>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów na twarz: 900zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz + szyja : 1 050zł</li>
-                            <li><i class="flaticon-check"></i>Cena promocyjna 4 zabiegów twarz+szyja+dekolt : 1350zł</li>
-                        </ul>
-                        <div class="pricing-btn">
-                            <a class="default-btn" href="{{ path('promotionsPage') }}">Sprawdź teraz</a>
-                        </div>
-                    </div>
-                </div>
+                {% include 'landingPage/common/widgets/promotions/promotionsTemplate.html.twig' %}
             </div>
         </div>
-        <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/offer/shape.png') }}"></div>
+        <div class="pricing-main-shape"><img alt="image" src="{{ asset('assets/images/page-banner/shape_rtl.png') }}"></div>
     </section>
 
 

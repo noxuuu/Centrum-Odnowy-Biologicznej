@@ -1,0 +1,26 @@
+{% for key, promotion in promotions %}
+    <div class="col-lg-4 col-md-6">
+        <div class="single-pricing-table">
+            {% set diff = 0 %}
+            {% set catName = '' %}
+            {% for combination in promotion %}
+                {% if (combination.price - combination.newPrice) > diff %}
+                    {% set diff = combination.price - combination.newPrice %}
+                {% endif %}
+            {% endfor %}
+            <div class="pricing-header">
+                <h3>{{ key }}</h3>
+                <span>OSZCZĘDZASZ DO {{ diff }} ZŁ!</span>
+            </div>
+            <ul class="pricing-features">
+                {% for combination in promotion %}
+                    {% set catName = combination.name %}
+                    <li><i class="flaticon-check"></i>{{ combination.type|processType }}: <s>{{ combination.price }} zł</s> {{ combination.newPrice }}</li>
+                {% endfor %}
+            </ul>
+            <div class="pricing-btn">
+                <a class="default-btn" href="{{ path('offerDetailsPage', {'category': catName, 'offer': key}) }}">Sprawdź teraz</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
