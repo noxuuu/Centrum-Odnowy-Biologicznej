@@ -22,9 +22,9 @@ class AdminFixtures extends Fixture
         // $manager->persist($product);
 
         $admin = new User();
-        $admin->setEmail('admin@centrumodnowybiologicznej.pl');
+        $admin->setEmail('');
         $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setPassword($this->passwordHasher->hashPassword($admin, 'admin'));
+        $admin->setPassword($this->passwordHasher->hashPassword($admin, ''));
         $manager->persist($admin);
 
         $manager->flush();
