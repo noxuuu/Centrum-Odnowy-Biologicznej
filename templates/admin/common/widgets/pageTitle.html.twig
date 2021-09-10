@@ -15,6 +15,10 @@
                     <div class="float-sm-right text-zero">
                         <button type="button" class="btn btn-primary btn-lg mr-1" data-toggle="modal" data-backdrop="static" data-target="#modal_add">Dodaj nową kombinacje</button>
                     </div>
+                {% elseif app.request.get('_route') == 'adminPromotionsAll' or app.request.get('_route') == 'adminPromotionsFeatured' %}
+                    <div class="float-sm-right text-zero">
+                        <button type="button" class="btn btn-primary btn-lg mr-1" data-toggle="modal" data-backdrop="static" data-target="#modal_add">Dodaj nową promocje</button>
+                    </div>
                 {% endif %}
             {% endif %}
             <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">

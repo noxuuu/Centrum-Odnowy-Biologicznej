@@ -24,7 +24,7 @@
     <div class="tab-content">
         <div class="courses-curriculum">
             {% for offer in offers %}
-                <h3>{{ offer.getName() }}</h3>
+                <a href="{{ path('offerDetailsPage', {'category': offer.getCategory().getName(), 'offer': offer.getName() }) }}"><h3>{{ offer.getName() }}</h3></a>
                 {% if offer.getOfferCombinations()|length > 0 %}
                     <ul>
                         {% for combination in offer.getOfferCombinations() %}
