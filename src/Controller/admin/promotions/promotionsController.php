@@ -4,13 +4,16 @@
 namespace App\Controller\admin\promotions;
 
 
+use App\Entity\FeaturedPromotion;
 use App\Entity\OfferCombination;
 use App\Entity\Promotion;
+use App\Form\FeaturedPromotionType;
 use App\Form\PromotionType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use const http\Client\Curl\FEATURES;
 
 /**
  * Controller for admin dashboard.
@@ -105,15 +108,38 @@ class promotionsController extends AbstractController
      * Get common of admin
      * @Route("/adminpanel/offers/promotions/featured", name="adminPromotionsFeatured")
      */
-    public function promotionsFeatured()
+    public function promotionsFeatured(Request $request)
     {
+        $featuredPromotionsRepo = $this->getDoctrine()->getRepository(FeaturedPromotion::class);
+
+        // create new entity and get manager for flushing it
+        $promotion = new FeaturedPromotion();
+        $entityManager = $this->getDoctrine()->getManager();
+
+        // create and handle adding form
+        $form_add = $this->createForm(FeaturedPromotionType::class, $promotion);
+        $form_add->handleRequest($request);
+
+        // === Perform data ===
+        if ($form_add->isSubmitted() && $form_add->isValid()) {
+            // flush new promo
+            $entityManager->persist($promotion);
+            $entityManager->flush();
+
+            $this->addFlash('add_success', 'Promocja została wyróżniona!');
+
+            return $this->redirectToRoute('adminPromotionsFeatured');
+        }
+
         return $this->render('admin/pages/promotions/featured/index.html.twig', [
             'mainTitle' => 'Centrum odnowy biologicznej',
             'pageTitle' => 'Wyróżnione promocje',
             'breadcrumbs' => [
                 ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
                 ['Wyóżnione promocje', $this->generateUrl('adminPromotionsFeatured')]
-            ]
+            ],
+            'promotions' => $featuredPromotionsRepo->findAll(),
+            'form_add' => $form_add->createView()
         ]);
     }
 
@@ -129,9 +155,9 @@ class promotionsController extends AbstractController
     {
         try {
             $entityManager = $this->getDoctrine()->getManager();
-            $promotion = $this->getDoctrine()->getRepository(Promotion::class)->find($id);
+            $promotion = $this->getDoctrine()->getRepository(FeaturedPromotion::class)->find($id);
 
-            if($promotion !== NULL) 
+            if($promotion !== NULL)
             {
                 $entityManager->remove($promotion);
                 $entityManager->flush();
