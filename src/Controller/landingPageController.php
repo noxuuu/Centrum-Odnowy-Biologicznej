@@ -139,13 +139,19 @@ class landingPageController extends AbstractController
      */
     public function pricesPage()
     {
+        // get repo's
+        $categoryRepo = $this->getDoctrine()->getRepository(Category::class);
+        $offersRepo = $this->getDoctrine()->getRepository(Offer::class);
+
         return $this->render('landingPage/pages/prices/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
             'pageTitle' => 'Cennik',
             'breadcrumbs' => [
                 ['Strona glowna', $this->generateUrl('homePage')],
                 ['Cennik', $this->generateUrl('pricesPage')]
-            ]
+            ],
+            'categories' => $categoryRepo->findAll(),
+            'offers' => $offersRepo->findAll()
         ]);
     }
 

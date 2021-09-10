@@ -1,0 +1,52 @@
+
+{% if level == 'main' %}
+    <div class="faq-accordion">
+        <div class="accordion">
+            {% set active = true %}
+            {% for category in categories %}
+                {% if category.getParent() != null %}
+                    <div class="accordion-item">
+                        <div class="accordion-title {% if active %}active{% endif %}">
+                            <i class="bx bxs-down-arrow"></i>{{ category.getParent().getName() }} - {{ category.getName() }}
+                        </div>
+                        <div class="accordion-content {% if active %}show{% endif %} courses-details-desc">
+                            {% include 'landingPage/pages/prices/categoriesTree.html.twig' with {'level': 'sub', 'offers': category|getCategoryOffers} %}
+                        </div>
+                    </div>
+                    {% if active == true %}
+                        {% set active = false %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div class="tab-content">
+        <div class="courses-curriculum">
+            {% for offer in offers %}
+                <h3>{{ offer.getName() }}</h3>
+                {% if offer.getOfferCombinations()|length > 0 %}
+                    <ul>
+                        {% for combination in offer.getOfferCombinations() %}
+                            <li>
+                                <a class="d-flex justify-content-between align-items-center" href="#">
+                                    <span class="courses-name">{{ combination.getType()|processType }}</span>
+                                    <div class="courses-meta">
+                                        <span class="duration">{{ combination.getTime() }} min</span>
+                                        <span class="questions" style="text-transform: uppercase">
+                                            {% if combination.getPrice() == 0 %}
+                                                Indywidualnie
+                                            {% else %}
+                                                {{ combination.getPrice() }} zł
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
