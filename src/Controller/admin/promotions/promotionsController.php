@@ -61,7 +61,7 @@ class promotionsController extends AbstractController
             'mainTitle' => 'Centrum odnowy biologicznej',
             'pageTitle' => 'Promocje na stronie',
             'breadcrumbs' => [
-                ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
+                ['Panel Administracyjny', '#'],
                 ['Promocje na stronie', $this->generateUrl('adminPromotionsAll')]
             ],
             'promotions' => $promotionsRepo->findAll(),
@@ -135,7 +135,7 @@ class promotionsController extends AbstractController
             'mainTitle' => 'Centrum odnowy biologicznej',
             'pageTitle' => 'Wyróżnione promocje',
             'breadcrumbs' => [
-                ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
+                ['Panel Administracyjny', '#'],
                 ['Wyóżnione promocje', $this->generateUrl('adminPromotionsFeatured')]
             ],
             'promotions' => $featuredPromotionsRepo->findAll(),

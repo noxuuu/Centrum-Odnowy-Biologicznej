@@ -42,7 +42,7 @@ class offersController extends AbstractController
             'mainTitle' => 'Centrum odnowy biologicznej',
             'pageTitle' => 'Oferta',
             'breadcrumbs' => [
-                ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
+                ['Panel Administracyjny', '#'],
                 ['Oferta', $this->generateUrl('adminOffers')]
             ],
             'form_edit' => $form_edit,
@@ -64,7 +64,7 @@ class offersController extends AbstractController
             'mainTitle' => 'Centrum odnowy biologicznej',
             'pageTitle' => 'Tworzenie nowej oferty',
             'breadcrumbs' => [
-                ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
+                ['Panel Administracyjny', '#'],
                 ['Oferta', $this->generateUrl('adminOffers')],
                 ['Tworzenie nowej oferty', $this->generateUrl('adminOffersAdd')]
             ],
@@ -172,7 +172,7 @@ class offersController extends AbstractController
             'mainTitle' => 'Centrum odnowy biologicznej',
             'pageTitle' => 'Kombinacje oferty',
             'breadcrumbs' => [
-                ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
+                ['Panel Administracyjny', '#'],
                 ['Oferta', $this->generateUrl('adminOffers')],
                 [$offer->getName(), "#"],
                 ['Kombinacje', $this->generateUrl('adminOfferCombinations', ['offer' => $offer->getId()])]

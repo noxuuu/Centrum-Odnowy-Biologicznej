@@ -15,7 +15,7 @@ class loginController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-            return $this->redirectToRoute('adminDashboard');
+            return $this->redirectToRoute('adminCategories');
         }
 
         // get the login error if there is one

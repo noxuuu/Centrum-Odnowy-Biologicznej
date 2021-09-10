@@ -60,7 +60,7 @@ class categoriesController extends AbstractController
 
         // add some breadcrumbs
         $breadcrumbs = [
-            ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
+            ['Panel Administracyjny', '#'],
             ['Kategorie ofert', $this->generateUrl('adminCategories')]
         ];
 
