@@ -46,6 +46,7 @@ class landingPageExtension extends AbstractExtension
             new TwigFilter('getRandomOfferLink', [$this, 'getRandomOfferLink']),
             new TwigFilter('getCategoryOffers', [$this, 'getCategoryOffers']),
             new TwigFilter('processType', [$this, 'processType']),
+            new TwigFilter('haveChild', [$this, 'haveChild']),
         ];
     }
 
@@ -89,5 +90,15 @@ class landingPageExtension extends AbstractExtension
             case 9: return 'Ciało';
         }
         return '';
+    }
+
+    public function haveChild($parent)
+    {
+        $categoryRepo = $this->entityManager->getRepository(Category::class);
+        $categories = $categoryRepo->findBy(['parent' => $parent]);
+        if(count($categories) > 0)
+            return true;
+
+        return false;
     }
 }

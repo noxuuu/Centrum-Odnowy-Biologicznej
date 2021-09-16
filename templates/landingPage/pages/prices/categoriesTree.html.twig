@@ -2,51 +2,68 @@
 {% if level == 'main' %}
     <div class="faq-accordion">
         <div class="accordion">
-            {% set active = true %}
+            {% set first = true %}
             {% for category in categories %}
-                {% if category.getParent() != null %}
+                {% if category.getParent() == null %}
                     <div class="accordion-item">
-                        <div class="accordion-title {% if active %}active{% endif %}">
-                            <i class="bx bxs-down-arrow"></i>{{ category.getParent().getName() }} - {{ category.getName() }}
+                        <div class="accordion-title {% if first %}active{% endif %}">
+                            <i class="bx bxs-down-arrow"></i>{{ category.getName() }}
                         </div>
-                        <div class="accordion-content {% if active %}show{% endif %} courses-details-desc">
-                            {% include 'landingPage/pages/prices/categoriesTree.html.twig' with {'level': 'sub', 'offers': category|getCategoryOffers} %}
+                        <div class="accordion-content {% if first %}show{% endif %} courses-details-desc">
+                            {% include 'landingPage/pages/prices/categoriesTree.html.twig' with {'level': 'sub', 'categorylvl':1, 'parent':category, 'categories': categories} %}
                         </div>
                     </div>
-                    {% if active == true %}
-                        {% set active = false %}
+                    {% if first == true %}
+                        {% set first = false %}
                     {% endif %}
                 {% endif %}
             {% endfor %}
         </div>
     </div>
-{% else %}
+{% elseif level == 'sub' %}
     <div class="tab-content">
         <div class="courses-curriculum">
-            {% for offer in offers %}
-                <a href="{{ path('offerDetailsPage', {'category': offer.getCategory().getName(), 'offer': offer.getName() }) }}"><h3>{{ offer.getName() }}</h3></a>
-                {% if offer.getOfferCombinations()|length > 0 %}
-                    <ul>
-                        {% for combination in offer.getOfferCombinations() %}
-                            <li>
-                                <a class="d-flex justify-content-between align-items-center" href="#">
-                                    <span class="courses-name">{{ combination.getType()|processType }}</span>
-                                    <div class="courses-meta">
-                                        <span class="duration">{{ combination.getTime() }} min</span>
-                                        <span class="questions" style="text-transform: uppercase">
+            {% for category in categories %}
+                {% if category.getParent() == parent %}
+                    {% if category|getCategoryOffers|length > 0 %}
+                        <h3 class="pb-4 {% if categorylvl == 1 %}text-center{% endif %}" style="color: #f0b9b2">{{ category.getName() }}</h3>
+
+                        {% if category|haveChild %}
+                            {% include 'landingPage/pages/prices/categoriesTree.html.twig' with {'level': 'sub', 'categorylvl':3, 'parent':category} %}
+                        {% endif %}
+
+                        {# include offers for those 2nd lvl categories #}
+                        {% include 'landingPage/pages/prices/categoriesTree.html.twig' with {'level': 'offers', 'categorylvl':2, 'offers':category|getCategoryOffers} %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% elseif level == 'offers' %}
+    {% for offer in offers %}
+        <a href="{{ path('offerDetailsPage', {'category': offer.getCategory().getName(), 'offer': offer.getName() }) }}">
+            <h3 {% if categorylvl == 2 %}style="padding-left: 30px"{% endif %}>{{ offer.getName() }}</h3>
+        </a>
+        {% if offer.getOfferCombinations()|length > 0 %}
+            <ul>
+                {% for combination in offer.getOfferCombinations() %}
+                    <li>
+                        <a class="d-flex justify-content-between align-items-center" href="#">
+                            <span class="courses-name">{{ combination.getType()|processType }}</span>
+                            <div class="courses-meta">
+                                <span class="duration">{{ combination.getTime() }} min</span>
+                                <span class="questions" style="text-transform: uppercase">
                                             {% if combination.getPrice() == 0 %}
                                                 Indywidualnie
                                             {% else %}
                                                 {{ combination.getPrice() }} zł
                                             {% endif %}
                                         </span>
-                                    </div>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
 {% endif %}
