@@ -7894,10 +7894,14 @@ img {
     padding: 0;
 }
 
-.subcategories {
+.offers {
     list-style-type: disc;
 }
 
 .subcategory {
     margin-top: 5px;
+}
+
+.subcategories {
+    list-style-type: none;
 }

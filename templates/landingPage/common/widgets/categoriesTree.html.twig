@@ -13,29 +13,38 @@
                             <i class="bx bxs-down-arrow"></i> {{ category_.getName() }}
                         </div>
                         <div class="accordion-content {% if active %}show{% endif %}">
-                            {% include 'landingPage/common/widgets/categoriesTree.html.twig' with {'level': 'sub', 'parentCategory': category_.getId() } %}
+                            {% include 'landingPage/common/widgets/categoriesTree.html.twig' with {'level': 'sub', 'categorylvl':1, 'parent':category_, 'categories': categories} %}
                         </div>
                     </div>
                 {% endif %}
             {% endfor %}
         </div>
     </div>
-{% else %}
-    <ul>
-    {% for category_ in categories %}
-        {% if category_.getParent is not null %}
-            {% if category_.getParent().getId() == parentCategory  %}
-                <li class="subcategory"><a href="{{ category_|getRandomOfferLink }}">{{ category_.getName() }}</a></li>
+{% elseif level == 'sub' %}
+    <ul class="subcategories">
+        {% for category_ in categories %}
+            {% if category_.getParent() == parent %}
+                {% if category_|getCategoryOffers|length > 0 %}
+                    <li class="subcategory">
+                        <a href="{{ category_|getRandomOfferLink }}" {% if categorylvl == 1 %} style="color: #f0b9b2" {% endif %}>{{ category_.getName() }}</a>
+                    </li>
 
-                {% if category_ == category %}
-                    <ul class="subcategories">
-                        {% for offer in category|getCategoryOffers %}
-                            <li class="subcategory"><a href="{{ path('offerDetailsPage', {'category': category.getName(), 'offer': offer.getName()}) }}">{{ offer.getName() }}</a></li>
-                        {% endfor %}
-                    </ul>
+                    {% if category_|haveChild %}
+                        {% include 'landingPage/common/widgets/categoriesTree.html.twig' with {'level': 'sub', 'categorylvl':3, 'parent':category_} %}
+                    {% endif %}
+
+                    {# include offers for those 2nd lvl categories #}
+                    {% include 'landingPage/common/widgets/categoriesTree.html.twig' with {'level': 'offers', 'offers':category_|getCategoryOffers} %}
                 {% endif %}
             {% endif %}
-        {% endif %}
-    {% endfor %}
+        {% endfor %}
+    </ul>
+{% elseif level == 'offers' %}
+    <ul class="offers">
+        {% for offer in offers %}
+            <a href="{{ path('offerDetailsPage', {'category': offer.getCategory().getName(), 'offer': offer.getName() }) }}">
+                <li class="subcategory"><a href="">{{ offer.getName() }}</a></li>
+            </a>
+        {% endfor %}
     </ul>
 {% endif %}
