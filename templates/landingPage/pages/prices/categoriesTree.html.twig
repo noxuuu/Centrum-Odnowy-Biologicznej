@@ -25,13 +25,12 @@
         <div class="courses-curriculum">
             {% for category in categories %}
                 {% if category.getParent() == parent %}
+                    <h3 class="pb-4 {% if categorylvl == 1 %}text-center{% endif %}" style="color: #f0b9b2">{{ category.getName() }}</h3>
+
+                    {% if category|haveChild %}
+                        {% include 'landingPage/pages/prices/categoriesTree.html.twig' with {'level': 'sub', 'categorylvl':3, 'parent':category} %}
+                    {% endif %}
                     {% if category|getCategoryOffers|length > 0 %}
-                        <h3 class="pb-4 {% if categorylvl == 1 %}text-center{% endif %}" style="color: #f0b9b2">{{ category.getName() }}</h3>
-
-                        {% if category|haveChild %}
-                            {% include 'landingPage/pages/prices/categoriesTree.html.twig' with {'level': 'sub', 'categorylvl':3, 'parent':category} %}
-                        {% endif %}
-
                         {# include offers for those 2nd lvl categories #}
                         {% include 'landingPage/pages/prices/categoriesTree.html.twig' with {'level': 'offers', 'categorylvl':2, 'offers':category|getCategoryOffers} %}
                     {% endif %}

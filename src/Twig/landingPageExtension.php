@@ -52,13 +52,26 @@ class landingPageExtension extends AbstractExtension
 
     public function getRandomOfferLink($categoryId)
     {
+
         $category = $this->entityManager->getRepository(Category::class)->find($categoryId);
         if(!$category)
             return "#";
 
         $offers = $this->entityManager->getRepository(Offer::class)->findBy(['category' => $category]);
-        if(count($offers) == 0)
-            return "#";
+        if(count($offers) == 0) {
+            // level is different than main, so we're checking for subcategories
+            foreach ($category->getSubCategories() as $subcategory) {
+                $subcategoryOffers = $this->entityManager->getRepository(Offer::class)->findBy(['category' => $subcategory]);
+                if(count($subcategoryOffers) > 0) {
+                    $offers = $subcategoryOffers;
+                    break;
+                }
+            }
+
+            // check wheter we found some offers or not
+            if(count($offers) == 0)
+                return "#";
+        }
 
         $offer = $offers[array_rand($offers, 1)];
 
