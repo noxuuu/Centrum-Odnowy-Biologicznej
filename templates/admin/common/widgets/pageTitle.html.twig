@@ -7,6 +7,10 @@
                     <div class="float-sm-right text-zero">
                         <button type="button" class="btn btn-primary btn-lg mr-1" data-toggle="modal" data-backdrop="static" data-target="#modal_add">Dodaj nową kategorie</button>
                     </div>
+                {% elseif app.request.get('_route') == 'adminSlider' %}
+                    <div class="float-sm-right text-zero">
+                        <button type="button" class="btn btn-primary btn-lg mr-1" data-toggle="modal" data-backdrop="static" data-target="#modal_add">Dodaj nowy slajd</button>
+                    </div>
                 {% elseif app.request.get('_route') == 'adminOffers' %}
                     <div class="float-sm-right text-zero">
                         <a class="btn btn-primary btn-lg mr-1" href="{{ path('adminOffersAdd') }}">Dodaj nową ofertę</a>

@@ -2,6 +2,12 @@
     <div class="main-menu">
         <div class="scroll">
             <ul class="list-unstyled">
+                <li {% if app.request.get('_route') == 'adminSlider' %}class="active"{% endif %}>
+                    <a href="{{ path('adminSlider') }}">
+                        <i class="iconsmind-Photo-Album2"></i>
+                        <span>Slider</span>
+                    </a>
+                </li>
                 <li {% if app.request.get('_route') == 'adminCategories' %}class="active"{% endif %}>
                     <a href="{{ path('adminCategories') }}">
                         <i class="iconsmind-Bulleted-List"></i>

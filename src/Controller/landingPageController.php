@@ -13,6 +13,7 @@ use App\Entity\Category;
 use App\Entity\FeaturedPromotion;
 use App\Entity\Offer;
 use App\Entity\Promotion;
+use App\Entity\Slider;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,9 +43,11 @@ class landingPageController extends AbstractController
 
         return $this->render('landingPage/pages/homepage/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
-            'pageTitle' => 'Landing Page ~ ',
+            'pageTitle' => 'Strona główna ~ ',
             'breadcrumbs' => [],
-            'promotions' => $promotions
+            'promotions' => $promotions,
+            'slides' => $this->getDoctrine()->getRepository(Slider::class)->findAll()
+
         ]);
     }
 

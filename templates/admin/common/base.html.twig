@@ -23,6 +23,7 @@
         {% block body %}{% endblock %}
 
         {% if app.request.get('_route') == 'adminCategories' or
+            app.request.get('_route') == 'adminSlider' or
             app.request.get('_route') == 'adminOffers' or
             app.request.get('_route') == 'adminOfferCombinations' or
             app.request.get('_route') == 'adminPromotionsAll' or

@@ -1,0 +1,121 @@
+{% extends 'admin/common/base.html.twig' %}
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-12 list">
+            {% if slides|length > 0 %}
+                {% for slide in slides %}
+                    <div class="card d-flex flex-row mb-3" id="slide-{{ slide.getId() }}">
+                        <div class="d-flex flex-grow-1 min-width-zero">
+
+                            <a class="d-flex" href="#">
+                                <img alt="{{ slide.getTitle() }}" class="list-thumbnail responsive border-0 card-img-left" src="{{ slide.getImagePath() }}">
+                            </a>
+                            <div class="pl-2 d-flex flex-grow-1 min-width-zero">
+                                <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                    <div class="card-body align-self-center d-flex flex-column flex-md-row min-width-zero align-items-md-center">
+                                        <a class="list-item-heading mb-1 truncate w-30">
+                                            {{ slide.getTitle() }}
+                                        </a>
+                                        <div class="w-15 ">
+                                            <span class="badge badge-pill badge-primary">{{ slide.getSubTitle() }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pl-1 align-self-center pr-4">
+                                <button type="button" onclick="confirmDelete({{ slide.getId() }})" class="btn btn-primary btn-sm mr-1">Usuń</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="card d-flex flex-row media-thumb-container">
+                    <a class="d-flex align-self-center media-thumbnail-icon no-results-icon">
+                        <i class="iconsmind-Information"></i>
+                    </a>
+                    <div class="d-flex flex-grow-1 min-width-zero">
+                        <div class="card-body align-self-center d-flex flex-column justify-content-between min-width-zero align-items-lg-center">
+                            <a class="w-100">
+                                <p class="list-item-heading mb-1 truncate">Nie znaleziono żadnych slajdów, dodaj pierwszy używając przycisku powyżej.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block modal_add %}
+    <div class="modal-header">
+        <h5 class="modal-title">Nowy slajd</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    {{ form_start(form_add) }}
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Tytuł:</label>
+            {{ form_widget(form_add.title) }}
+        </div>
+        <div class="form-group">
+            <label>Tekst:</label>
+            {{ form_widget(form_add.subtitle) }}
+        </div>
+        <div class="form-group">
+            <label>Link do obrazka:</label>
+            {{ form_widget(form_add.imagePath) }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Anuluj</button>
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+    </div>
+    {{ form_end(form_add) }}
+{% endblock %}
+
+
+
+{% block javascripts %}
+    <script>
+        function confirmDelete(id) {
+            swal({
+                    title: "Jesteś pewien?",
+                    text: "Tego slajdu nie będzie można przywrócić!",
+                    type: "warning",
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    confirmButtonClass: "btn-primary",
+                    cancelButtonClass: "btn-outline-primary",
+                    confirmButtonText: "Tak, usuń!",
+                    cancelButtonText: "Anuluj",
+                    closeOnConfirm: false
+                },
+                function(){
+                    $.ajax({
+                        url:        '/adminpanel/slider/' + id + '/delete',
+                        type:       'GET',
+                        dataType:   'json',
+                        async:      true,
+
+                        success: function(data, status) {
+                            if(data[0]) {
+                                swal("Usunięto!", "Poprawnie usunięto slajd.", "success");
+
+                                // tricky thing but works so it's fine :)
+                                $('#slide-' + id).addClass('hidden');
+                            }
+                        },
+                        error : function(xhr, textStatus, errorThrown) {
+                            swal("Błąd", " Wystąpił niespodziewany błąd, skontaktuj się z administratorem.", "error");
+                        }
+                    });
+                });
+        }
+    </script>
+{% endblock %}
+
