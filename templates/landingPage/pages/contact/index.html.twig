@@ -5,6 +5,18 @@
 {% block body %}
     <section class="contact-info-area pt-100 pb-70">
         <div class="container">
+            {% for message in app.flashes('error') %}
+                <div class="user-actions text-center">
+                    <i class="bx bx-message-alt-error"></i>
+                    <span>{{ message }}</span>
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('success') %}
+                <div class="user-actions text-center">
+                    <i class="bx bx-badge-check"></i>
+                    <span>{{ message }}</span>
+                </div>
+            {% endfor %}
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="contact-info-box">
@@ -40,7 +52,6 @@
         </div>
     </section>
 
-
     <section class="contact-area pb-lg-5">
         <div class="container">
             <div class="row">
@@ -50,29 +61,31 @@
                 <div class="col-lg-6">
                     <div class="contact-form">
                         <h3>Zostańmy w kontakcie!</h3>
-                        <form id="contactForm" name="contactForm">
+                        {{ form_start(contact_form, {'attr': {'id': 'contactForm'}}) }}
                             <div class="form-group">
-                                <input class="form-control" data-error="Wpisz swoje imię" id="name" name="name" placeholder="Imię" required="" type="text">
+                                {{ form_widget(contact_form.name) }}
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" data-error="Wpisz swój numer telefonu" id="phone_number" name="phone_number" placeholder="Numer telefonu" required="" type="text">
+                                {{ form_widget(contact_form.number) }}
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" data-error="Wpisz swój adres email" id="email" name="email" placeholder="Adres email" required="" type="email">
+                                {{ form_widget(contact_form.email) }}
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" cols="30" data-error="Wpisz treść swojej wiadomości" id="message" name="message" placeholder="Treść wiadomości" required="" rows="5"></textarea>
+                                {{ form_widget(contact_form.message) }}
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" id="accept" type="checkbox"> <label class="form-check-label" for="accept">Wyrażam zgodę na przesyłanie informacji handlowych poprzez telekomunikacyjne urządzenia końcowe na powyższy adres e-mail, w tym z wykorzystaniem automatycznych systemów wywołujących i potwierdzam chęć dopisania do bazy. Zgoda jest dobrowolna i może zostać wycofana w dowolnym momencie.</label>
-                            </div><button class="default-btn" type="submit">Wyślij wiadomość</button>
+                                <input class="form-check-input" id="accept" type="checkbox">
+                                <label class="form-check-label" for="accept">Wyrażam zgodę na przesyłanie informacji handlowych poprzez telekomunikacyjne urządzenia końcowe na powyższy adres e-mail, w tym z wykorzystaniem automatycznych systemów wywołujących i potwierdzam chęć dopisania do bazy. Zgoda jest dobrowolna i może zostać wycofana w dowolnym momencie.</label>
+                            </div>
+                            <button class="default-btn" type="submit">Wyślij wiadomość</button>
                             <div class="h3 text-center hidden" id="msgSubmit"></div>
                             <div class="clearfix"></div>
-                        </form>
+                        {{ form_end(contact_form) }}
                     </div>
                 </div>
             </div>

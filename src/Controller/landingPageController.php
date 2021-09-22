@@ -14,14 +14,23 @@ use App\Entity\FeaturedPromotion;
 use App\Entity\Offer;
 use App\Entity\Promotion;
 use App\Entity\Slider;
+use App\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 class landingPageController extends AbstractController
 {
+    private $mailerInterface;
+
+    public function __construct(MailerInterface $mailerInterface) {
+        $this->mailerInterface = $mailerInterface;
+    }
 
     /**
      * Get common of home page
@@ -202,15 +211,53 @@ class landingPageController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Exception
      */
-    public function contactPage()
+    public function contactPage(Request $request)
     {
+
+        // create and handle form
+        $form_contact = $this->createForm(ContactType::class, []);
+        $form_contact->handleRequest($request);
+
+        if ($form_contact->isSubmitted() && $form_contact->isValid()) {
+            // get some data
+            $formData = $form_contact->getData();
+
+            // prepare message
+            $email = (new TemplatedEmail())
+                ->from('kontakt@centrumodnowybiologicznej.pl')
+                ->to('kontakt@centrumodnowybiologicznej.pl')
+                ->priority(Email::PRIORITY_HIGH)
+                ->subject('COB | Wiadomość kontaktowa od '.$formData['name'])
+                ->htmlTemplate('emails/new-message.html.twig')
+                ->context([
+                    'clientName' => $formData['name'],
+                    'clientEmail' => $formData['email'],
+                    'clientNumber' => $formData['number'],
+                    'clientMessage' => $formData['message']
+                ]);
+
+            $error = false;
+            try {
+                $this->mailerInterface->send($email);
+            } catch(\Exception $e) {
+                $this->addFlash('error', 'Błąd w wysyłaniu wiadomości.');
+                $error = true;
+            }
+
+            if(!$error)
+                $this->addFlash('success', 'Wiadomość wysłana poprawnie.');
+
+            return $this->redirectToRoute('contactPage');
+        }
+
         return $this->render('landingPage/pages/contact/index.html.twig', [
             'mainTitle' => 'Centrum Odnowy Biologicznej w Cycowie',
             'pageTitle' => 'Kontakt',
             'breadcrumbs' => [
                 ['Strona glowna', $this->generateUrl('homePage')],
                 ['Kontakt', $this->generateUrl('contactPage')]
-            ]
+            ],
+            'contact_form' => $form_contact->createView()
         ]);
     }
 }
