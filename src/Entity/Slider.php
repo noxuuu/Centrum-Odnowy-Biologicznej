@@ -32,6 +32,11 @@ class Slider
      */
     private $imagePath;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $hyperlink;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Slider
     public function setImagePath(string $imagePath): self
     {
         $this->imagePath = $imagePath;
+
+        return $this;
+    }
+
+    public function getHyperlink(): ?string
+    {
+        return $this->hyperlink;
+    }
+
+    public function setHyperlink(string $hyperlink): self
+    {
+        $this->hyperlink = $hyperlink;
 
         return $this;
     }

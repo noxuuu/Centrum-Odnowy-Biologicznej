@@ -40,6 +40,13 @@ class SliderForm extends AbstractType
                 'attr' => [
                     'class' => 'form-control'
                 ]
+            ])
+            ->add('hyperlink', TextType::class, [
+                'label' => false,
+                'required' => true,
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]);
     }
 

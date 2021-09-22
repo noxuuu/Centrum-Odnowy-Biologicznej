@@ -1,63 +1,27 @@
-
-
 <div class="main-slides-area">
     <div class="home-slides owl-carousel owl-theme">
-        <div class="main-slides-item-box">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="main-slides-content">
-                            <div class="container-fluid slider-logo">
-                                <img class="mx-auto d-block" src="{{ asset('assets/images/logo.svg') }}">
-                            </div>
-                            <h1>Laser LIGHT SHEER DESIRE</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit ore magna aliqua.</p>
-                            <div class="slides-btn">
-                                <a class="default-btn" href="#">Sprawdź ofertę</a>
+        {% for slide in slides %}
+            <div class="main-slides-item-box">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <div class="main-slides-content">
+                                <div class="container-fluid slider-logo">
+                                    <img class="mx-auto d-block" src="{{ asset('assets/images/logo.svg') }}">
+                                </div>
+                                <h1>{{ slide.getTitle() }}</h1>
+                                <p>{{ slide.getSubTitle }}</p>
+                                <div class="slides-btn">
+                                    <a class="default-btn" href="{{ slide.getHyperlink() }}">Sprawdź ofertę</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="main-slides-image"><img alt="image" src="{{ asset('assets/images/slides/slide1.jpg') }}"></div>
+                        <div class="col-lg-5">
+                            <div class="main-slides-image"><img alt="image" src="{{ slide.getImagePath() }}"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="main-slides-item-box">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="main-slides-content">
-                            <div class="container-fluid slider-logo">
-                                <img class="mx-auto d-block" src="{{ asset('assets/images/logo.svg') }}">
-                            </div>
-                            <h1>Czekamy na Ciebie!</h1>
-                            <p>Nasz zespół czeka na Ciebie, aby zapewnić Ci niesamowite chwilę dla siebie.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="main-slides-image"><img alt="image" src="{{ asset('assets/images/slides/slide1.jpg') }}"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-slides-item-box">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="main-slides-content">
-                            <div class="container-fluid slider-logo">
-                                <img class="mx-auto d-block" src="{{ asset('assets/images/logo.svg') }}">
-                            </div>
-                            <h1>Poznaj naszą oferte!</h1>
-                            <p>Poznaj nas oraz usługi, które oferujemy.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="main-slides-image"><img alt="image" src="{{ asset('assets/images/slides/slide1.jpg') }}"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

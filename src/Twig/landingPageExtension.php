@@ -92,6 +92,7 @@ class landingPageExtension extends AbstractExtension
     public function processType($type)
     {
         switch($type) {
+            case 0: return 'Zabieg';
             case 1: return 'Twarz';
             case 2: return 'Twarz + Oczy';
             case 3: return 'Twarz + Szyja';
