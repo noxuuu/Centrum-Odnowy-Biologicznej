@@ -42,9 +42,7 @@
 {% elseif level == 'offers' %}
     <ul class="offers">
         {% for offer in offers %}
-            <a href="{{ path('offerDetailsPage', {'category': offer.getCategory().getName(), 'offer': offer.getName() }) }}">
-                <li class="subcategory"><a href="">{{ offer.getName() }}</a></li>
-            </a>
+            <li class="subcategory"><a href="{{ path('offerDetailsPage', {'category': offer.getCategory().getName(), 'offer': offer.getName() }) }}">{{ offer.getName() }}</a></li>
         {% endfor %}
     </ul>
 {% endif %}
