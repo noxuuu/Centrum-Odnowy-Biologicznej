@@ -5,8 +5,10 @@ namespace App\Controller\admin\offers;
 
 
 use App\Entity\Category;
+use App\Entity\FeaturedPromotion;
 use App\Entity\Offer;
 use App\Entity\OfferCombination;
+use App\Entity\Promotion;
 use App\Form\CategoryType;
 use App\Form\OfferCombinationType;
 use App\Form\OfferType;
@@ -15,6 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use const http\Client\Curl\FEATURES;
 
 /**
  * Controller for admin dashboard.
@@ -113,12 +116,35 @@ class offersController extends AbstractController
      */
     public function deleteOffer(Request $request, $id)
     {
-        try {
             $entityManager = $this->getDoctrine()->getManager();
             $offer = $this->getDoctrine()->getRepository(Offer::class)->find($id);
+            $promotionsRepo = $this->getDoctrine()->getRepository(Promotion::class);
+            $featuredRepo = $entityManager->getRepository(FeaturedPromotion::class);
 
-            if($offer !== NULL)
+        if($offer !== NULL)
             {
+                $combinations = $offer->getOfferCombinations();
+                if($combinations !== NULL) {
+                    foreach ($combinations as $combination) {
+                        // check if any promotion is signed to this combination
+                        $promotion = $promotionsRepo->findOneBy(['offerCombination' => $combination->getId()]);
+
+                        if($promotion !== NULL) {
+                            // check if this promotion isn't signed as featured
+                            $featuredPromotion = $featuredRepo->findOneBy(['promotion' => $promotion->getId()]);
+
+                            // remove featured one
+                            if($featuredPromotion !== NULL)
+                                $entityManager->remove($featuredPromotion);
+
+                            // delete this promotion
+                            $entityManager->remove($promotion);
+                        }
+                    }
+                }
+
+
+
                 // finally, delete the OFFER
                 $entityManager->remove($offer);
                 $entityManager->flush();
@@ -127,10 +153,6 @@ class offersController extends AbstractController
             }
             else
                 $data[0] = false;
-
-        } catch (\Exception $e) {
-            $data[0] = false;
-        }
 
         if ($request->isXmlHttpRequest() || $request->query->get('showJson') == 1)
             return new JsonResponse($data);

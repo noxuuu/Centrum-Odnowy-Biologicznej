@@ -85,11 +85,28 @@ class promotionsController extends AbstractController
 
             if($promotion !== NULL)
             {
-                // finally, delete the OFFER
-                $entityManager->remove($promotion);
-                $entityManager->flush();
+                // Check wheter promotion is signed as featured in featured promotions table
+                $featuredRepo = $this->getDoctrine()->getRepository(FeaturedPromotion::class);
+                $match = $featuredRepo->findOneBy(['promotion' => $promotion->getId()]);
 
-                $data[0] = true;
+                if($match === NULL) {
+                    $entityManager->remove($promotion);
+                    $entityManager->flush();
+
+                    $data[0] = true;
+                } else {
+
+                    // MATCH found so we need to remove orphaned entities first (i suck at this moment)
+                    $entityManager->remove($match);
+                    $entityManager->flush();
+
+                    // finally, delete the OFFER
+                    $entityManager->remove($promotion);
+                    $entityManager->flush();
+
+                    // assign notification success
+                    $data[0] = true;
+                }
             }
             else
                 $data[0] = false;

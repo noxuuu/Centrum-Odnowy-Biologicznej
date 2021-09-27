@@ -18,7 +18,7 @@ class Promotion
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity=OfferCombination::class, cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=OfferCombination::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $offerCombination;
