@@ -7905,3 +7905,7 @@ img {
 .subcategories {
     list-style-type: none;
 }
+
+.col-team {
+    min-height: 1150px;
+}

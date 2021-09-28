@@ -11,9 +11,11 @@
                                 </div>
                                 <h1>{{ slide.getTitle() }}</h1>
                                 <p>{{ slide.getSubTitle }}</p>
-                                <div class="slides-btn">
-                                    <a class="default-btn" href="{{ slide.getHyperlink() }}">Sprawdź ofertę</a>
-                                </div>
+                                {% if slide.getHyperlink() != "" %}
+                                    <div class="slides-btn">
+                                        <a class="default-btn" href="{{ slide.getHyperlink() }}">Sprawdź ofertę</a>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-lg-5">
