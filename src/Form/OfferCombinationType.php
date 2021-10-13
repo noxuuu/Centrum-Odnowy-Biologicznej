@@ -42,9 +42,26 @@ class OfferCombinationType extends AbstractType
                     'Twarz + Szyja + Dekolt' => '4',
                     'Szyja' => '5',
                     'Oczy' => '6',
-                    'Nos' => '7',
-                    'Dłonie' => '8',
-                    'Ciało' => '9'
+                    'Dekolt' => '7',
+                    'Nos' => '8',
+                    'Dłonie' => '9',
+                    'Ciało' => '10',
+                    'Wąsik' => '11',
+                    'Broda' => '12',
+                    'Policzki' => '13',
+                    'Bikini' => '14',
+                    'Linia biała' => '15',
+                    'Obszar między pośladkami' => '16',
+                    'Pachy' => '17',
+                    'Plecy' => '18',
+                    'Nogi' => '19',
+                    'Łydki' => '20',
+                    'Uda' => '21',
+                    'Brzuch' => '22',
+                    'Stopy' => '23',
+                    'Pośladki' => '24',
+                    'Uda + Pośladki' => '25',
+                    'Ramiona' => '26'
                 ]
             ]);
     }

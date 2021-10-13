@@ -99,9 +99,26 @@ class landingPageExtension extends AbstractExtension
             case 4: return 'Twarz + Szyja + Dekolt';
             case 5: return 'Szyja';
             case 6: return 'Oczy';
-            case 7: return 'Nos';
-            case 8: return 'Dłonie';
-            case 9: return 'Ciało';
+            case 7: return 'Dekolt';
+            case 8: return 'Nos';
+            case 9: return 'Dłonie';
+            case 10: return 'Ciało';
+            case 11: return 'Wąsik';
+            case 12: return 'Broda';
+            case 13: return 'Policzki';
+            case 14: return 'Bikini';
+            case 15: return 'Linia biała';
+            case 16: return 'Obszar między pośladkami';
+            case 17: return 'Pachy';
+            case 18: return 'Plecy';
+            case 19: return 'Nogi';
+            case 20: return 'Łydki';
+            case 21: return 'Uda';
+            case 22: return 'Brzuch';
+            case 23: return 'Stopy';
+            case 24: return 'Pośladki';
+            case 25: return 'Uda + Pośladki';
+            case 26: return 'Ramiona';
         }
         return '';
     }
