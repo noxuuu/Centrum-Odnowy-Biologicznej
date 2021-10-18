@@ -7,7 +7,7 @@
  * Time: 13:02
  */
 
-namespace App\Security;
+namespace App\Service;
 
 
 use App\Entity\OfferCombination;

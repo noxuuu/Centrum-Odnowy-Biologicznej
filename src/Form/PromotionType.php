@@ -2,9 +2,8 @@
 
 namespace App\Form;
 
-use App\Entity\OfferCombination;
 use App\Entity\Promotion;
-use App\Security\formChoicesLoader;
+use App\Service\formChoicesLoader;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
