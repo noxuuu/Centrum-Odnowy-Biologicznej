@@ -14,7 +14,7 @@
                             <div class="single-courses-box">
                                 <div class="courses-image">
                                     <a href="{% if category.getSubCategories()|length == 0 %}{{ category.getId()|getRandomOfferLink() }}{% else %}{% if category.getParent() != null %}{{ category.getId()|getRandomOfferLink() }}{% else %}{{ path('offerPage', {'category': category.getId()}) }}{% endif %}{% endif %}">
-                                        <img src="{{ asset('assets/images/offer/'~ category.getImage()) }}" alt="{{ category.getName() }}">
+                                        <img src="{{ category.getImage() }}" alt="{{ category.getName() }}">
                                     </a>
                                 </div>
                                 <div class="courses-content">

@@ -13,7 +13,7 @@
                         <div class="card d-flex flex-row mb-3" id="category-{{ category.getId()|replace({' ': "-"}) }}">
                             <div class="d-flex flex-grow-1 min-width-zero">
                                 <a class="d-flex" href="{{ path('adminCategories', {'category': category.getId()}) }}">
-                                    <img alt="{{ category.getName() }}" class="list-thumbnail responsive border-0 card-img-left" src="{{ asset('assets/images/offer/'~ category.getImage()) }}">
+                                    <img alt="{{ category.getName() }}" class="list-thumbnail responsive border-0 card-img-left" src="{{ category.getImage() }}">
                                 </a>
                                 <div class="pl-2 d-flex flex-grow-1 min-width-zero">
                                     <div class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
