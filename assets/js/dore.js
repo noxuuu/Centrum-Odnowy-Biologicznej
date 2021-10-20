@@ -3615,11 +3615,6 @@ $.dore = function(element, options) {
     if ($().selectFromLibrary) {
       $(".sfl-multiple").selectFromLibrary();
       $(".sfl-single").selectFromLibrary();
-      /*
-      Getting selected items
-      console.log($(".sfl-multiple").selectFromLibrary().data("selectFromLibrary").getData());
-      console.log($(".sfl-single").selectFromLibrary().data("selectFromLibrary").getData());
-      */
     }
 
     /* 03.37. Smart wizard */

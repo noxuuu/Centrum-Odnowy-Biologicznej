@@ -8,6 +8,13 @@
                         <span>Slider</span>
                     </a>
                 </li>
+                <li {% if app.request.get('_route') == 'adminAlbums'
+                        or app.request.get('_route') == 'adminAlbumsView' %}class="active"{% endif %}>
+                    <a href="{{ path('adminAlbums') }}">
+                        <i class="iconsmind-Photo-Album2"></i>
+                        <span>Zdjęcia</span>
+                    </a>
+                </li>
                 <li {% if app.request.get('_route') == 'adminCategories' %}class="active"{% endif %}>
                     <a href="{{ path('adminCategories') }}">
                         <i class="iconsmind-Bulleted-List"></i>

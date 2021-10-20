@@ -1,0 +1,136 @@
+{% extends 'admin/common/base.html.twig' %}
+{% block title %}{{ pageTitle }}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('dropzone') }}
+    {{ encore_entry_link_tags('context-menu') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-12 col-xl-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="selected-library-item sfl-selected-item mb-5" style="display: block;">
+                        <div class="card d-flex flex-row media-thumb-container">
+                            <a class="d-flex align-self-center media-thumbnail-icon">
+                                <i class="iconsmind-Photo-Album2"></i>
+                            </a>
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div class="card-body align-self-center d-flex flex-column justify-content-between min-width-zero align-items-lg-center">
+                                    <a class="w-100">
+                                        <p class="list-item-heading mb-1 truncate sfl-selected-item-name">{{ selectedAlbum.getName() }}</p>
+                                    </a>
+                                </div>
+                                <div class="pl-1 align-self-center">
+                                    <a href="{{ path('adminAlbums') }}" class="btn-link delete-library-item sfl-delete-item"><i class="simple-icon-close"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 drop-area-container">
+                    <div class="card br-0 drop-area">
+                        <div class="card-body">
+                            <form action="/file-upload">
+                                <div class="dropzone"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-8 list disable-text-selection" data-check-all="checkAll">
+            <div class="row">
+                {% if photos|length > 0 %}
+                    {% for photo in photos %}
+                        {% if photo.getAlbum() is not null %}
+                            <div class="col-xl-4 col-12" id="photo-col-{{ photo.getId() }}">
+                                <div class="card context-item-photo br-0 d-flex flex-row mb-4 media-thumb-container" id="{{ photo.getId() }}">
+                                    <a class="d-flex align-self-center">
+                                        <img src="{{ asset('assets/images/uploads/' ~ photo.getName() ) }}" alt="uploaded image" class="list-media-thumbnail responsive border-0">
+                                    </a>
+                                    <div class="d-flex flex-grow-1 min-width-zero">
+                                        <div class="card-body align-self-center d-flex flex-column justify-content-between min-width-zero align-items-lg-center">
+                                    <span class="w-100">
+                                        <p class="list-item-heading mb-1 truncate">{{ photo.getName() }}</p>
+                                    </span>
+                                            <p class="mb-1 text-muted text-small w-100 truncate">{{ photo.getUploaded()|date("d/m/Y H:i:s") }}</p>
+                                        </div>
+                                        <div class="custom-control custom-checkbox pl-1 align-self-center">
+                                            <label class="custom-control custom-checkbox mb-0">
+                                                <input type="checkbox" class="custom-control-input">
+                                                <span class="custom-control-label"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <div class="col-12">
+                        <div class="card d-flex flex-row media-thumb-container">
+                            <a class="d-flex align-self-center media-thumbnail-icon">
+                                <i class="iconsmind-Information"></i>
+                            </a>
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div class="card-body align-self-center d-flex flex-column justify-content-between min-width-zero align-items-lg-center">
+                                    <a class="w-100">
+                                        <p class="list-item-heading mb-1 truncate">Wybrany album jest pusty, przeciągnij zdjęcia na lewą strone aby dodać je do albumu</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal_add %}
+    <div class="modal-header">
+        <h5 class="modal-title">Edytuj album {{ selectedAlbum.getName() }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    {{ form_start(form_edit) }}
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Nazwa:</label>
+            {{ form_widget(form_edit.name, {'value' : selectedAlbum.getName()}) }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Anuluj</button>
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+    </div>
+    {{ form_end(form_edit) }}
+{% endblock %}
+
+{% block javascripts %}
+    <!-- PRO dropzone script ever -->
+    {{ encore_entry_script_tags('dropzone') }}
+
+    <!-- context menu -->
+    {{ encore_entry_script_tags('context-menu') }}
+
+    <script>
+        if ($().dropzone && !$(".dropzone").hasClass("disabled")) {
+            $(".dropzone").dropzone({
+                url: "/image/upload",
+                thumbnailWidth: 160,
+                params: {
+                    token: "{{ csrf_token('upload') }}"
+                },
+                previewTemplate: '<div class="dz-preview dz-file-preview mb-3"><div class="d-flex flex-row "> <div class="p-0 w-30 position-relative"> <div class="dz-error-mark"><span><i class="simple-icon-exclamation"></i>  </span></div>      <div class="dz-success-mark"><span><i class="simple-icon-check-circle"></i></span></div>      <img data-dz-thumbnail class="img-thumbnail border-0" /> </div> <div class="pl-3 pt-2 pr-2 pb-1 w-70 dz-details position-relative"> <div> <span data-dz-name /> </div> <div class="text-primary text-extra-small" data-dz-size /> </div> <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>        <div class="dz-error-message"><span data-dz-errormessage></span></div>            </div><a href="#" class="remove" data-dz-remove> <i class="simple-icon-trash"></i> </a></div>',
+                init: function() {
+                    this.on("sending", function(file, xhr, formData) {
+                        formData.append("album", $('.sfl-selected-item-name').text());
+                    });
+                }
+            });
+        }
+    </script>
+{% endblock %}

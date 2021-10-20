@@ -54,7 +54,7 @@ class albumController extends AbstractController
             ['Albumy na stronie', $this->generateUrl('adminAlbums')]
         ];
 
-        return $this->render('adminpanel/album/index.html.twig', [
+        return $this->render('admin/pages/albums/index.html.twig', [
             'mainTitle' => 'Centrum odnowy biologicznej',
             'pageTitle' => 'Albumy na stronie',
             'breadcrumbs' => $breadcrumbs,
@@ -94,7 +94,7 @@ class albumController extends AbstractController
             'mainTitle' => 'Katarzyna Kropornicka Fotografia',
             'pageTitle' => 'Albumy',
             'breadcrumbs' => [
-                ['Panel Administracyjny', $this->generateUrl('adminDashboard')],
+                ['Panel Administracyjny', '#'],
                 ['Albumy', $this->generateUrl("adminAlbums")]
             ],
             'albums' => $albumsRepo->findAll(),

@@ -3,7 +3,16 @@
         <div class="mb-3">
             <h1>{{ pageTitle }}</h1>
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                {% if app.request.get('_route') == 'adminCategories' %}
+                {% if app.request.get('_route') == 'adminAlbums'
+                    or app.request.get('_route') == 'adminAlbumsView' %}
+                <div class="float-sm-right text-zero">
+                    {% if app.request.get('_route') == 'adminAlbums' %}
+                        <button type="button" class="btn btn-primary btn-lg mr-1" data-toggle="modal" data-backdrop="static" data-target="#modal_add">Utwórz nowy album</button>
+                    {% elseif app.request.get('_route') == 'adminAlbumsView' %}
+                        <button type="button" class="btn btn-primary btn-lg mr-1" data-toggle="modal" data-backdrop="static" data-target="#modal_add">Edytuj album</button>
+                    {% endif %}
+                </div>
+                {% elseif app.request.get('_route') == 'adminCategories' %}
                     <div class="float-sm-right text-zero">
                         <button type="button" class="btn btn-primary btn-lg mr-1" data-toggle="modal" data-backdrop="static" data-target="#modal_add">Dodaj nową kategorie</button>
                     </div>

@@ -18,13 +18,15 @@
 {% include('admin/common/widgets/topbar.html.twig') %}
 {% include('admin/common/widgets/navigation.html.twig') %}
 <main>
-    <div class="container-fluid">
+    <div class="container-fluid {% if(app.request.get('_route') == 'adminAlbums' or app.request.get('_route') == 'adminAlbumsView') %} library-app{% endif %}">
         {% include('admin/common/widgets/pageTitle.html.twig') %}
         {% block body %}{% endblock %}
 
         {% if app.request.get('_route') == 'adminCategories' or
             app.request.get('_route') == 'adminSlider' or
             app.request.get('_route') == 'adminOffers' or
+            app.request.get('_route') == 'adminAlbums' or
+            app.request.get('_route') == 'adminAlbumsView' or
             app.request.get('_route') == 'adminOfferCombinations' or
             app.request.get('_route') == 'adminPromotionsAll' or
             app.request.get('_route') == 'adminPromotionsFeatured'

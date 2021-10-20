@@ -73,6 +73,7 @@ class photoUploadController extends AbstractController
         // prepare our photo
         $photo = new Photo();
         $photo->setAlbum($album);
+        $photo->setName($filename);
         $photo->setUploaded(new \DateTime());
 
         // flush photo object
